@@ -68,6 +68,7 @@ public class Movement : MonoBehaviour
 
     public bool Occupied(Vector2 direction)
     {
+        
         CircleCollider2D circleCollider = GetComponent<CircleCollider2D>();
         if (circleCollider == null)
         {
