@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public Enemy[] enemy;
     public Pacmon pacmon;
-    public Transform pellets;
+    //public Transform pellets;
 
     public int score {get; private set;}
     public int lives {get; private set;}
@@ -31,9 +31,11 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
+        /*
         foreach (Transform pellet in this.pellets) {
             pellet.gameObject.SetActive(true);
         }
+        */
         ResetState();
     }
 
