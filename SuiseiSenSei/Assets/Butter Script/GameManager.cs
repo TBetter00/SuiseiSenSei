@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             this.enemy[i].gameObject.SetActive(true);
         }
 
-        this.pacmon.ResetState();
+        //this.pacmon.ResetState();
     }
 
     private void SetScore(int score)
