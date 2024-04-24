@@ -88,15 +88,7 @@ public class Movement : MonoBehaviour
         // Debug ray visualization
         Debug.DrawRay(center, direction * 1.5f, Color.red, 0.1f);
         
-        // Debug logging
-        if (hit.collider != null)
-        {
-            Debug.Log("Hit object: " + hit.collider.name);
-        }
-        else
-        {
-            Debug.Log("No object hit.");
-        }
+
         
         return hit.collider != null;
     }
