@@ -62,30 +62,34 @@ public class Pacmon : MonoBehaviour
 
         return -1;
     }
-
     private void HandleInputForStage(string stage)
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             this.movement.SetDirection(Vector2.up);
-            animator.Play(stage + "_upwalk");
+            if (movement.Occupied(Vector2.up)){}
+            else{animator.Play(stage + "_upwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             this.movement.SetDirection(Vector2.down);
-            animator.Play(stage + "_downwalk");
+            if (movement.Occupied(Vector2.down)){}
+            else{animator.Play(stage + "_downwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             this.movement.SetDirection(Vector2.left);
-            animator.Play(stage + "_leftwalk");
+            if (movement.Occupied(Vector2.left)){}
+            else{animator.Play(stage + "_leftwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             this.movement.SetDirection(Vector2.right);
-            animator.Play(stage + "_rightwalk");
+            if (movement.Occupied(Vector2.right)){}
+            else{animator.Play(stage + "_rightwalk");}
         }
     }
+
 
     public void ResetState()
     {
