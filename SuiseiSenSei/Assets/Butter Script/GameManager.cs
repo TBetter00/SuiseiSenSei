@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public Enemy[] enemy;
     public Pacmon pacmon;
-    public PelletManager pellet;
+    //public PelletManager pellet;
     //public Transform pellets;
 
     public int score {get; private set;}
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void PelletEat(int score)
     {
-        this.pellet.gameObject.SetActive(false);
+        //this.pellet.gameObject.SetActive(false);
         SetScore(this.score + score);
     }
 }
