@@ -3260,7 +3260,7 @@ GameObject:
   - component: {fileID: 1233087563}
   - component: {fileID: 1233087562}
   - component: {fileID: 1233087559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chamender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3349,7 +3349,7 @@ Transform:
   m_GameObject: {fileID: 1233087557}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.46, y: -0.34, z: -8.722059}
+  m_LocalPosition: {x: 2.46, y: -0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4629,7 +4629,7 @@ GameObject:
   - component: {fileID: 1982167622}
   - component: {fileID: 1982167621}
   - component: {fileID: 1982167620}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
