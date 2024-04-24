@@ -35,4 +35,11 @@ public class Pacmon : MonoBehaviour
         }
     }
 
+    public void ResetState()
+    {
+        this.movement.ResetState();
+        this.gameObject.SetActive(true);
+
+    }
+
 }
