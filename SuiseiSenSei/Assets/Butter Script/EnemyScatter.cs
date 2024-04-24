@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyScatter : EnemyBehavior
 {
-
-    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
@@ -26,5 +24,5 @@ public class EnemyScatter : EnemyBehavior
             this.enemy.movement.SetDirection(node.availableDirections[index]);
         }
     }
-    */
+
 }
