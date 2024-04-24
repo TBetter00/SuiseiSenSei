@@ -47,6 +47,9 @@ TagManager:
   - name: Also Walls
     uniqueID: 2638068323
     locked: 0
+  - name: Decoration
+    uniqueID: 3177104803
+    locked: 0
   - name: Layer 1
     uniqueID: 2425651459
     locked: 0
