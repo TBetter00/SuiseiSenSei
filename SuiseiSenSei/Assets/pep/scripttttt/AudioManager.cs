@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+
         pacmon = FindObjectOfType<Pacmon>();
 
         if (pacmon == null)
