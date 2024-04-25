@@ -64,6 +64,6 @@ public class AttackInputHandler : MonoBehaviour
         else { StateToAttack = 0; }
     }
 
-    
+
 
 }
