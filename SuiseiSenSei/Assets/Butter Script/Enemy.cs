@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         ResetState();
+        target = GameObject.Find("Pukkermon").transform;
     }
 
     public virtual void ResetState()
