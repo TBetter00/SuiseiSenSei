@@ -71,7 +71,7 @@ public class Pacmon : MonoBehaviour
         }
     }
 
-    private int GetCurrentStage()
+    public int GetCurrentStage()
     {
         if (stageEgg)
             return 0;
