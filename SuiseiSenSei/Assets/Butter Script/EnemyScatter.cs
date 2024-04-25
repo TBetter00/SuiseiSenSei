@@ -10,7 +10,7 @@ public class EnemyScatter : EnemyBehavior
 
         if (node != null && this.enabled && !this.enemy.frightened.enabled)
         {
-            Debug.Log("node not null and scatter enable");
+        
             int index = Random.Range(0, node.availableDirections.Count);
 
             if (node.availableDirections[index] == -this.enemy.movement.direction && node.availableDirections.Count > 1)
@@ -23,6 +23,7 @@ public class EnemyScatter : EnemyBehavior
             }
 
             this.enemy.movement.SetDirection(node.availableDirections[index]);
+            Debug.Log("index="+ node.availableDirections.Count);
         }
     }
 
