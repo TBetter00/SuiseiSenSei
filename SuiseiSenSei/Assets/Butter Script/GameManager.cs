@@ -91,4 +91,25 @@ public class GameManager : MonoBehaviour
         //this.pellet.gameObject.SetActive(false);
         SetScore(this.score + score);
     }
+
+    public void PelletEaten(Pellet pellet)
+    {
+        pellet.gameObject.SetActive(false);
+        SetScore(this.score + pellet.point);
+    }
+
+    /*
+    public void PowerPellet(PowerPallet pellet)
+    {
+        PelletEaten(pellet);
+    }
+
+    private bool HasRemainingPellets()
+    {
+        foreach(Transform pellet in this.pellet)
+        {
+
+        }
+    }
+    */
 }
