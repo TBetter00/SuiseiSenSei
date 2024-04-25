@@ -26,6 +26,7 @@ public class BigEnemy : Enemy
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+        Healthbar.SetHealth(currentHP,maxHP);
         if (currentHP <= 0)
         {
             Die();
