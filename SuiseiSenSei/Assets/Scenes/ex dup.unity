@@ -2709,7 +2709,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218666366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6875,8 +6875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -3.51, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.147656, y: -4.2080097, z: -30.688366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6914,6 +6914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blinky
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771772059023595070, guid: 49bd88720458fd94982e7f905bf5b87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5515674113973558515, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
@@ -6953,12 +6958,12 @@ PrefabInstance:
     - target: {fileID: 6209027367144225428, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.51
+      value: 2.517
       objectReference: {fileID: 0}
     - target: {fileID: 6209027367144225428, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49
+      value: -0.483
       objectReference: {fileID: 0}
     - target: {fileID: 6209027367144225428, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
@@ -7128,6 +7133,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43059e81b4ee9b84a80c11d7b4379dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &623126168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5884995271772178999, guid: 49bd88720458fd94982e7f905bf5b87e,
+    type: 3}
+  m_PrefabInstance: {fileID: 616017841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68c16e3a66f7984b9755b8298ea6639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &756412750
@@ -15973,6 +15990,53 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1582214359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582214361}
+  - component: {fileID: 1582214360}
+  m_Layer: 0
+  m_Name: Gamemmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1582214360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582214359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a334b38b8fbed744287f704a0c39e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: 623126168}
+  pacmon: {fileID: 800160751296053544}
+--- !u!4 &1582214361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582214359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.788853, y: -4.3932877, z: -1.8171684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611650174
 GameObject:
   m_ObjectHideFlags: 0
@@ -21368,6 +21432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalBGM: {fileID: 0}
   megaBGM: {fileID: 0}
+  pacmon: {fileID: 0}
 --- !u!1 &8093972574008209407
 GameObject:
   m_ObjectHideFlags: 0
@@ -21395,3 +21460,4 @@ SceneRoots:
   - {fileID: 5075390461751414172}
   - {fileID: 616017841}
   - {fileID: 185135535}
+  - {fileID: 1582214361}
