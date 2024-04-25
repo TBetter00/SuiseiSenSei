@@ -3574,6 +3574,8 @@ MonoBehaviour:
   stage2: 0
   stage3: 0
   stageMega: 0
+  blinkingeggto1: 0
+  blinking1to2: 0
 --- !u!114 &1233087563
 MonoBehaviour:
   m_ObjectHideFlags: 0
