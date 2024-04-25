@@ -18,6 +18,12 @@ public class Pacmon : MonoBehaviour
     private bool isBlinkingeggto1;
     public bool blinking1to2;
     private bool isBlinking1to2;
+    public bool blinking2to3;
+    private bool isBlinking2to3;
+    public bool blinking3to4;
+    private bool isBlinking3to4;
+    public bool blinking4to3;
+    private bool isBlinking4to3;
 
     private void Awake()
     {
@@ -43,7 +49,26 @@ public class Pacmon : MonoBehaviour
             blinking1to2 = false;
         }
 
-        
+        if (blinking2to3)
+        {
+            isBlinking2to3 = true;
+            StartCoroutine(change2to3());
+            blinking2to3 = false;
+        }
+
+        if (blinking3to4)
+        {
+            isBlinking3to4 = true;
+            StartCoroutine(change3to4());
+            blinking3to4 = false;
+        }
+
+        if (blinking4to3)
+        {
+            isBlinking4to3 = true;
+            StartCoroutine(change4to3());
+            blinking4to3 = false;
+        }
     }
 
     private void CheckUpdate()
@@ -92,25 +117,25 @@ public class Pacmon : MonoBehaviour
         {
             this.movement.SetDirection(Vector2.up);
             if (movement.Occupied(Vector2.up)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2) { animator.Play(stage + "_upwalk");}
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_upwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             this.movement.SetDirection(Vector2.down);
             if (movement.Occupied(Vector2.down)){}
-            else if(!isBlinkingeggto1 && !isBlinking1to2) {animator.Play(stage + "_downwalk");}
+            else if(!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) {animator.Play(stage + "_downwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             this.movement.SetDirection(Vector2.left);
             if (movement.Occupied(Vector2.left)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2) { animator.Play(stage + "_leftwalk");}
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_leftwalk");}
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             this.movement.SetDirection(Vector2.right);
             if (movement.Occupied(Vector2.right)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2) { animator.Play(stage + "_rightwalk");}
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_rightwalk");}
         }
     }
 
@@ -147,5 +172,32 @@ public class Pacmon : MonoBehaviour
         stage1 = false;
         stage2 = true;
         isBlinking1to2 = false;
+    }
+
+    IEnumerator change2to3()
+    {
+        animator.Play("change2to3");
+        yield return new WaitForSeconds(2);
+        stage2 = false;
+        stage3 = true;
+        isBlinking2to3 = false;
+    }
+
+    IEnumerator change3to4()
+    {
+        animator.Play("change3to4");
+        yield return new WaitForSeconds(2);
+        stage3 = false;
+        stageMega = true;
+        isBlinking3to4 = false;
+    }
+
+    IEnumerator change4to3()
+    {
+        animator.Play("change4to3");
+        yield return new WaitForSeconds(2);
+        stageMega = false;
+        stage3 = true;
+        isBlinking4to3 = false;
     }
 }

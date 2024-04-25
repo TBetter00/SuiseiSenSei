@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         ResetState();
     }
 
-    public void ResetState()
+    public virtual void ResetState()
     {
         this.gameObject.SetActive(true);
         this.movement.ResetState();

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EnemyScatter : EnemyBehavior
 {
+
+    private void OnDisable()
+    {
+        this.enemy.chase.Enable();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
