@@ -6,10 +6,10 @@ using TMPro;
 
 public class score : MonoBehaviour
 {
-    public float Score;
+    public GameManager gameManager;
     public TextMeshProUGUI ScoreText;
     private void Update()
     {
-        ScoreText.text = Score.ToString();
+        ScoreText.text = gameManager.score.ToString();
     }
 }

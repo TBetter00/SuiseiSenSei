@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         if (this.lives <= 0 && Input.anyKeyDown){
             NewGame();
         }
+        //Debug.Log("Score: " + score);
     }
 
     private void NewGame()

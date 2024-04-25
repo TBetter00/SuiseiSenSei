@@ -9,6 +9,7 @@ public class Pacmon : MonoBehaviour
 {
     public Movement movement { get; private set; }
     public Animator animator;
+    public GameManager GameManager;
     
 
     public bool stageEgg;
@@ -32,6 +33,10 @@ public class Pacmon : MonoBehaviour
     private bool isBlinking3to4;
     public bool blinking4to3;
     private bool isBlinking4to3;
+    public bool AlreadyBlink1st;
+    public bool AlreadyBlink2nd;
+    public bool AlreadyBlink3rd;
+    public bool AlreadyBlink4th;
 
     private void Awake()
     {
@@ -42,6 +47,7 @@ public class Pacmon : MonoBehaviour
     private void Update()
     {
         CheckUpdate();
+        ChangeStageWithScore();
         
         if (blinkingeggto1)
         {
@@ -77,7 +83,7 @@ public class Pacmon : MonoBehaviour
             StartCoroutine(change4to3());
             blinking4to3 = false;
         }
-
+        Debug.Log("Stage :" + GetCurrentStage());
         
     }
 
@@ -199,6 +205,30 @@ public class Pacmon : MonoBehaviour
         stage2 = false;
         stage3 = false;
         stageMega = false;
+    }
+    public void ChangeStageWithScore()
+    {
+        if (!blinkingeggto1 && GameManager.score >= 30 && !AlreadyBlink1st)
+        {
+            blinkingeggto1 = true;
+            AlreadyBlink1st = true;
+
+        }
+        else if (!blinking1to2 && GameManager.score >= 200 && !AlreadyBlink2nd)
+        {
+            blinking1to2 = true;
+            AlreadyBlink2nd = true;
+        }
+        else if (!blinking2to3 && GameManager.score >= 500 && !AlreadyBlink3rd)
+        {
+            blinking2to3 = true;
+            AlreadyBlink3rd = true;
+        }
+        else if (!blinking3to4 && GameManager.score >= 1000 && !AlreadyBlink4th)
+        {
+            blinking3to4 = true;
+            AlreadyBlink4th = true;
+        }
     }
 
 
