@@ -28,7 +28,12 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        pacmon = GetComponent<Pacmon>();
+        pacmon = FindObjectOfType<Pacmon>();
+
+        if (pacmon == null)
+        {
+            Debug.LogWarning("Pacmon component not found in the scene!");
+        }
     }
     void Update()
     {
