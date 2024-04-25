@@ -4,6 +4,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource normalBGM;
     public AudioSource megaBGM;
+    public Pacmon pacmon;
 
     public void MutenormalAudio()
     {
@@ -15,12 +16,31 @@ public class AudioManager : MonoBehaviour
         normalBGM.mute = false;
     }
 
-    void ExampleUsage()
+    public void MutemegaAudio()
     {
-        AudioManager audioManager = GetComponent<AudioManager>();
+        megaBGM.mute = true;
+    }
 
-        audioManager.MutenormalAudio();
+    public void UnmutemegaAudio()
+    {
+        megaBGM.mute = false;
+    }
 
-        audioManager.UnmutenormalAudio();
+    private void Awake()
+    {
+        pacmon = GetComponent<Pacmon>();
+    }
+    void Update()
+    {
+        if (pacmon.stage3)
+        {
+            UnmutenormalAudio();
+            MutemegaAudio();
+        }
+        if (pacmon.stageMega)
+        {
+            UnmutemegaAudio();
+            MutenormalAudio();
+        }
     }
 }
