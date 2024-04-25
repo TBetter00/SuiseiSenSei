@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyChase : EnemyBehavior
 {
-    /*
     private void OnDisable()
     {
         this.enemy.scatter.Enable();
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +16,7 @@ public class EnemyChase : EnemyBehavior
 
         if (node != null && this.enabled && !this.enemy.frightened.enabled)
         {
+            Debug.Log("Chase mode");
             Vector2 direction = Vector2.zero;
             float minDistance = float.MaxValue;
 
@@ -34,6 +35,5 @@ public class EnemyChase : EnemyBehavior
             this.enemy.movement.SetDirection(direction);
         }
     }
-    */
 
 }
