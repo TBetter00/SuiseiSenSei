@@ -7,7 +7,7 @@ public class BigEnemy : Enemy
     public float maxHP = 5;
     public HealthbarBehaviour Healthbar;
 
-    private void Awake()
+    private void Start()
     {
 
         currentHP = maxHP;
@@ -19,7 +19,7 @@ public class BigEnemy : Enemy
     {
         base.ResetState();
         currentHP = maxHP;
-        //UpdateHPBar();
+
     }
 
     // Method to decrease HP when attacked
@@ -31,7 +31,6 @@ public class BigEnemy : Enemy
         {
             Die();
         }
-        //UpdateHPBar();
     }
 
     public void Update()

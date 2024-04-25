@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class EnemyFrightened : EnemyBehavior
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
+        Node node = other.GetComponent<Node>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (node != null && this.enabled && !this.enemy.frightened.enabled)
+        {
+            Debug.Log("Chase mode");
+            Vector2 direction = Vector2.zero;
+            float maxDistance = float.MinValue;
+
+            foreach (Vector2 availableDirections in node.availableDirections)
+            {
+                Vector3 newPosition = this.transform.position + new Vector3(availableDirections.x, availableDirections.y, 0.0f);
+                float distance = (this.enemy.target.position - newPosition).sqrMagnitude;
+
+                if (distance > maxDistance)
+                {
+                    direction = availableDirections;
+                    maxDistance = distance;
+                }
+            }
+
+            this.enemy.movement.SetDirection(direction);
+        }
     }
 }

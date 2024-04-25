@@ -167,12 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb47a891e1ab5145874579b4bcb709f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.8
-  speedMultiplier: 1
+  speed: 0.09
+  speedMultiplier: 0.09
   initialDirection: {x: 0, y: 0}
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &1836582966120023129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   target: {fileID: 0}
   points: 200
   currentHP: 0
-  maxHP: 100
+  maxHP: 10
   Healthbar: {fileID: 8934924007366495312}
 --- !u!114 &5719636679857312663
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43059e81b4ee9b84a80c11d7b4379dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 5
 --- !u!114 &7606814572623155707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5806afeee27db1498b2e273232c2d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 5
 --- !u!114 &9183778424306781256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618ddbd5603861445826fc9fe1e90de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 5
 --- !u!114 &5913803757344235729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85efe727b702124884e0d2ac1bf9cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 5
 --- !u!1 &4303609506407036622
 GameObject:
   m_ObjectHideFlags: 0
