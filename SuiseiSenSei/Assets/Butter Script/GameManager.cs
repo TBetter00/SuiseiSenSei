@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Enemy[] enemy;
+    public Transform spawnPoint;
     public Pacmon pacmon;
+    public GameObject enemy;
+    public GameObject bigEnemy;
+    private Pacmon pacmonScript;
+    private GameObject currentEnemy;
+    private GameObject currentBigEnemy;
     //public PelletManager pellet;
     //public Transform pellets;
 
@@ -14,6 +19,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
+        pacmonScript = GetComponent<Pacmon>();
+        CheckMon1();
     }
 
     private void Update()
@@ -42,11 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
-        for (int i = 0; i < this.enemy.Length; i++)
-            {
-            this.enemy[i].gameObject.SetActive(true);
-        }
-
         this.pacmon.ResetState();
     }
 
@@ -57,9 +59,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        for (int i = 0; i < this.enemy.Length; i++){
-            this.enemy[i].gameObject.SetActive(false);
-        }
 
         this.pacmon.gameObject.SetActive(false);
     }
@@ -97,6 +96,23 @@ public class GameManager : MonoBehaviour
     //     pellet.gameObject.SetActive(false);
     //     SetScore(this.score + pellet.point);
     // }
+
+    public void SpawnEnemy()
+    {
+
+    }
+
+    public void CheckMon1()
+    {
+        if (pacmonScript != null)
+        {
+            currentEnemy = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        }
+        else
+        {
+            Debug.LogWarning("Pacmon script is null or stageEgg is false.");
+        }
+    }
 
     /*
     public void PowerPellet(PowerPallet pellet)

@@ -7,6 +7,7 @@ public class BigEnemy : Enemy
     public float maxHP = 5;
     public HealthbarBehaviour Healthbar;
 
+
     private void Start()
     {
 

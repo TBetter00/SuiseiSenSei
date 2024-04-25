@@ -9,6 +9,7 @@ public class Pacmon : MonoBehaviour
 {
     public Movement movement { get; private set; }
     public Animator animator;
+    
 
     public bool stageEgg;
     public bool stage1;
