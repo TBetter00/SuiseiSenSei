@@ -30,6 +30,8 @@ public class FireSpread : Skill{
 
     public override void SkillEnable()
     {
+        base.SkillEnable();
+        
         fireobject.SetActive(true);
         canfire = true;
         StartCoroutine(ActiveDuration());
@@ -47,6 +49,11 @@ public class FireSpread : Skill{
         else if(atk.location==atk.Rightlocation){offset= new Vector3(0.5f,0,0);}
         else if(atk.location==atk.Uplocation){offset= new Vector3(0,0.5f,0);}
         else if(atk.location==atk.Downlocation){offset= new Vector3(0,-0.5f,0);}
+    }
+
+    public override void SkillDisable()
+    {
+        base.SkillDisable();
     }
 
 }

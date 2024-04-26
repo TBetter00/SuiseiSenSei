@@ -13,25 +13,30 @@ public class Longfire : Skill{
     public virtual void Update()
     {
         if (onActive){
-            SkillEnable();}
-    }
-
-    public virtual void Enter()
-    {
-        onActive = true;
-        StartCoroutine(ActiveDuration());
+            Cast();}
     }
 
     public override void SkillEnable()
     {
         base.SkillEnable();
-        
+
+        onActive = true;
+        StartCoroutine(ActiveDuration());
+    }
+
+    private void Cast()
+    {
         GameObject firecast = Instantiate(fire, atk.location.position, atk.location.rotation);
         if (atk.location == atk.Leftlocation || atk.location == atk.Rightlocation)
         {
             firecast.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         }
         firecast.GetComponent<Rigidbody2D>().AddForce(atk.location.up*force, ForceMode2D.Impulse);
+    }
+
+    public override void SkillDisable()
+    {
+        base.SkillDisable();
     }
 
     protected virtual IEnumerator ActiveDuration()

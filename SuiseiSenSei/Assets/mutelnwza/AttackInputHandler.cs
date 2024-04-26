@@ -8,6 +8,7 @@ public class AttackInputHandler : MonoBehaviour
     private Longfire longfire;
     private Wind wind;
     private Pacmon pacmon;
+    private Skill skill;
 
     public Transform Leftlocation;
     public Transform Rightlocation;
@@ -37,24 +38,24 @@ public class AttackInputHandler : MonoBehaviour
 
     public void GetAttackInput()
     {
-        if (Input.GetKeyDown("space") && StateToAttack==1)
+        if (Input.GetKeyDown("space") && StateToAttack==1 && skill.Power>=1)
         {
             fireball.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack==2)
+        else if (Input.GetKeyDown("space") && StateToAttack==2 && skill.Power>=1)
         {
             firespread.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack == 3)
+        else if (Input.GetKeyDown("space") && StateToAttack == 3 && skill.Power>=1)
         {
-            longfire.Enter();
+            longfire.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("left ctrl")&&StateToAttack==3)
+        else if (Input.GetKeyDown("left ctrl")&&StateToAttack==3 && skill.Power>=1)
         {
-            wind.Enter();
+            wind.SkillEnable();
         }
     }
 
