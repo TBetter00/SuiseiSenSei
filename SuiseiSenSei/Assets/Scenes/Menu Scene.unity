@@ -876,7 +876,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242529423}
-  - component: {fileID: 242529422}
   m_Layer: 5
   m_Name: fademaintocredit
   m_TagString: Untagged
@@ -884,23 +883,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &242529422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242529421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1136e425b328384c8866ab8a4f60a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackImg1: {fileID: 263468869}
-  blackImg2: {fileID: 1184655186}
-  canvas1: {fileID: 1385618591}
-  canvas2: {fileID: 2062343638}
-  fadeDuration: 1
 --- !u!224 &242529423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1140,59 +1122,6 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.040039062}
   m_SizeDelta: {x: 0, y: -0.080078125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &320382204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 320382206}
-  - component: {fileID: 320382205}
-  m_Layer: 5
-  m_Name: fadecredittomain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &320382205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320382204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1136e425b328384c8866ab8a4f60a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackImg1: {fileID: 1184655186}
-  blackImg2: {fileID: 263468869}
-  canvas1: {fileID: 2062343638}
-  canvas2: {fileID: 1385618591}
-  fadeDuration: 1
---- !u!224 &320382206
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320382204}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.80104166, y: 0.80104166, z: 0.80104166}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1007.4396, y: 566.6229}
-  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &582384999
 GameObject:
@@ -1589,7 +1518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 320382205}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: fadeBetweencanvas, Assembly-CSharp
         m_MethodName: ChangeCanvasAndFade
         m_Mode: 1
@@ -1640,6 +1569,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621021184}
   m_CullTransparentMesh: 1
+--- !u!1 &649792056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649792058}
+  - component: {fileID: 649792057}
+  m_Layer: 0
+  m_Name: startfade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &649792057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649792056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3403b66fd13b1846bdf6d89a3c18ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackImg: {fileID: 263468869}
+  fadeDuration: 1
+--- !u!4 &649792058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649792056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 524.2203, y: 369.62793, z: -13.273787}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689256542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2546,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 242529422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: fadeBetweencanvas, Assembly-CSharp
         m_MethodName: ChangeCanvasAndFade
         m_Mode: 1
@@ -4159,4 +4134,4 @@ SceneRoots:
   - {fileID: 1457091570}
   - {fileID: 841000003}
   - {fileID: 242529423}
-  - {fileID: 320382206}
+  - {fileID: 649792058}
