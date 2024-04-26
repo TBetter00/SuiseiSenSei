@@ -42,7 +42,7 @@ public class AttackInputHandler : MonoBehaviour
 
         else if (Input.GetKeyDown("space") && StateToAttack==2)
         {
-            firespread.Fire();
+            firespread.SkillEnable();
         }
 
         else if (Input.GetKeyDown("space") && StateToAttack == 3)
