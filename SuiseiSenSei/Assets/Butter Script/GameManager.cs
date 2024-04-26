@@ -7,9 +7,10 @@ public class GameManager : MonoBehaviour
     public Pacmon pacmon;
     public GameObject enemy;
     public GameObject bigEnemy;
-    private Pacmon pacmonScript;
     private GameObject currentEnemy;
     private GameObject currentBigEnemy;
+    private bool hasSpawned1 = false;
+    private bool hasSpawned2 = false;
     //public PelletManager pellet;
     //public Transform pellets;
 
@@ -19,8 +20,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
-        pacmonScript = GetComponent<Pacmon>();
-        CheckMon1();
+        GameObject pacmonGameObject = GameObject.Find("Pukkermon");
+        if (pacmonGameObject != null)
+            {
+                pacmon = pacmonGameObject.GetComponent<Pacmon>();
+            }
+        else
+            {
+                Debug.LogWarning("Pacmon GameObject not found.");
+            }
     }
 
     private void Update()
@@ -28,7 +36,9 @@ public class GameManager : MonoBehaviour
         if (this.lives <= 0 && Input.anyKeyDown){
             NewGame();
         }
-        //Debug.Log("Score: " + score);
+        CheckMon1();
+
+        SpawnRepeat();
     }
 
     private void NewGame()
@@ -98,20 +108,57 @@ public class GameManager : MonoBehaviour
     //     SetScore(this.score + pellet.point);
     // }
 
-    public void SpawnEnemy()
+    // in stage 1 spawn first monster and when that monster die it will spawn 1 monster
+    public void CheckMon1()
     {
+        if (pacmon.stage1 && !hasSpawned1)
+        {   
+            SpawnMon1();
+            hasSpawned1 = true;
+        }
+        if (hasSpawned1 && currentEnemy == null)
+        {
+            SpawnMon1();
+        }
 
     }
 
-    public void CheckMon1()
+    public void SpawnMon1()
     {
-        if (pacmonScript != null)
+        if (pacmon.stage1)
         {
             currentEnemy = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         }
-        else
+    }
+
+
+    public void CheckMon2()
+    {
+        if (pacmon.stage2 && !hasSpawned2)
+        {   
+            SpawnMon2();
+            hasSpawned2 = true;
+        }
+        if (hasSpawned2 && currentBigEnemy == null)
         {
-            Debug.LogWarning("Pacmon script is null or stageEgg is false.");
+            SpawnMon2();
+        }
+
+    }
+
+    public void SpawnMon2()
+    {
+        if (pacmon.stage1)
+        {
+            currentBigEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+        }
+    }
+
+    public void SpawnRepeat()
+    {
+        if (pacmon.stage2 || pacmon.stage3)
+        {
+           InvokeRepeating("SpawnMon1", 0f, 5f);
         }
     }
 
