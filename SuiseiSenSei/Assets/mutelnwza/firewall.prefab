@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5874148845662177622}
   - component: {fileID: 134563707233465707}
   - component: {fileID: 2526714610941559150}
+  - component: {fileID: 4199744016308510665}
   - component: {fileID: 6774779035925459707}
   m_Layer: 0
   m_Name: firewall
@@ -95,10 +96,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 5628657586013672654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a2e1e0566bcde4080ab6ee03885cf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a6fe0d4fa896bd4d88111de69d7c4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AvailableTime: 3
+  powerCheck: {fileID: 0}
+  timer: 2
+  fireobject: {fileID: 5628657586013672654}
+--- !u!114 &4199744016308510665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628657586013672654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b76a86529bf5140a1e2cd92c3adcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  dmgmultiplier: 1
 --- !u!50 &6774779035925459707
 Rigidbody2D:
   serializedVersion: 4

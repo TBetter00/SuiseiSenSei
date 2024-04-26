@@ -37,6 +37,8 @@ public class Pacmon : MonoBehaviour
     public bool AlreadyBlink2nd;
     public bool AlreadyBlink3rd;
     public bool AlreadyBlink4th;
+    public bool AlreadyBlink5th;
+    public int cooldown;
 
     public Palette[] palette;
 
@@ -88,6 +90,7 @@ public class Pacmon : MonoBehaviour
             isBlinking4to3 = true;
             StartCoroutine(change4to3());
             blinking4to3 = false;
+            //AlreadyBlink5th = false;
         }
         Debug.Log("Stage :" + GetCurrentStage());
         
@@ -220,20 +223,21 @@ public class Pacmon : MonoBehaviour
             AlreadyBlink1st = true;
 
         }
-        else if (!blinking1to2 && GameManager.score >= 750 && !AlreadyBlink2nd)
+        else if (!blinking1to2 && GameManager.score >= 350 && !AlreadyBlink2nd)
         {
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >= 800 && !AlreadyBlink3rd)
+        else if (!blinking2to3 && GameManager.score >= 400 && !AlreadyBlink3rd )
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
         }
-        else if (!blinking3to4 && GameManager.score >= 9000000000 && !AlreadyBlink4th)
+        else if (!blinking3to4 && GameManager.score >= 500 && !AlreadyBlink4th)
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
+            //StartCoroutine(Waitfor());
         }
     }
 
@@ -281,5 +285,14 @@ public class Pacmon : MonoBehaviour
         setAllstageFalse();
         stage3 = true;
         isBlinking4to3 = false;
+    }
+    IEnumerator Waitfor()
+    {
+        yield return new WaitForSeconds(cooldown);
+        if (!blinking4to3 && !AlreadyBlink5th && GameManager.score >= 500)
+        {
+            blinking4to3 = true;
+            AlreadyBlink5th = true;
+        }
     }
 }

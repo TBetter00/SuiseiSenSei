@@ -21,6 +21,7 @@ public class Longfire : Skill{
         base.SkillEnable();
 
         onActive = true;
+        Debug.Log("OnActive :" + onActive);
         StartCoroutine(ActiveDuration());
     }
 
@@ -47,5 +48,6 @@ public class Longfire : Skill{
     {
         yield return new WaitForSeconds(timer);
         onActive = false;
+        Debug.Log("OnActive :" + onActive);
     }
 }

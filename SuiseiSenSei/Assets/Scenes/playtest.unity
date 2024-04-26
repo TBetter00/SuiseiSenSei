@@ -15755,6 +15755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627097029214646946, guid: f19465fe690cd39479ff7fac260ffb40,
         type: 3}
+      propertyPath: powerCheck
+      value: 
+      objectReference: {fileID: 5075390461751414174}
+    - target: {fileID: 6627097029214646946, guid: f19465fe690cd39479ff7fac260ffb40,
+        type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1582214360}
@@ -31874,7 +31879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerCheck: {fileID: 0}
   onActive: 0
-  timer: 4
+  timer: 0.5
   constraints: 0
   fire: {fileID: 89560756333566540, guid: 1e7bdd72ef551b94f960243b303c6713, type: 3}
 --- !u!4 &1686850630 stripped
@@ -39707,7 +39712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 2
-  dmgmultiplier: 0
+  dmgmultiplier: 1
 --- !u!1 &2033870255
 GameObject:
   m_ObjectHideFlags: 0
