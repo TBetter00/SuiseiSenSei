@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class AttackInputHandler : MonoBehaviour
 {
-    private Skill skill;
     private Fireball fireball;
     private FireSpread firespread;
+    private Longfire longfire;
     private Pacmon pacmon;
 
     public Transform Leftlocation;
@@ -20,10 +20,10 @@ public class AttackInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        skill = GetComponent<Skill>();
         pacmon = GetComponent<Pacmon>();
         fireball = GetComponent<Fireball>();
         firespread = GetComponent<FireSpread>();
+        longfire = GetComponent<Longfire>();
     }
 
     private void Update()
@@ -40,9 +40,14 @@ public class AttackInputHandler : MonoBehaviour
             fireball.SkillEnable();
         }
 
-        if (Input.GetKeyDown("space") && StateToAttack==2)
+        else if (Input.GetKeyDown("space") && StateToAttack==2)
         {
             firespread.Fire();
+        }
+
+        else if (Input.GetKeyDown("space") && StateToAttack == 3)
+        {
+            longfire.Enter();
         }
     }
 
