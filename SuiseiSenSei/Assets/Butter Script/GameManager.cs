@@ -57,18 +57,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnMonRepeatly());
 
 
-        if (pacmon.stage3 && !hasSpawned3)
-        {
-            hasSpawned3 = true;
-            SpawnMon3(initialEnemyCount);
-        }
-
-        Spawn2EnemiesAfterDie();
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            DestroyRandomEnemy();
-        }
         
     }
 
@@ -191,73 +179,16 @@ public class GameManager : MonoBehaviour
         {
             hasSpawnedRepeat = true;
             Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(30);
+            yield return new WaitForSeconds(10);
             hasSpawnedRepeat = false;
 
         }
         
     }
 
-    void SpawnMon3(int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            GameObject enemyy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-            enemies.Add(enemyy);
-            Debug.Log("Enemy spawned!");
-        }
 
-    }
     
-    void Spawn2EnemiesAfterDie()
-    {
-        // Create a temporary list to store new enemies
-        List<GameObject> newEnemies = new List<GameObject>();
 
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            if (enemies[i] == null) // Check if an enemy has been destroyed
-            {
-                enemies.RemoveAt(i);
-                // Add new enemies to the temporary list
-                for (int j = 0; j < spawnAmountAfterDeath; j++)
-                {
-                    GameObject newEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-                    newEnemies.Add(newEnemy);
-                    Debug.Log("New enemy spawned!");
-                }
-            }
-        }
-
-        // Add new enemies from the temporary list to the main enemies list
-        enemies.AddRange(newEnemies);
-
-        // Debug the list of enemies after processing
-        Debug.Log("Remaining Enemies:");
-        foreach (GameObject enemy in enemies)
-        {
-            Debug.Log(enemy != null ? enemy.name : "null");
-        }
-    }
-
-    void DestroyRandomEnemy()
-    {
-        if (enemies.Count > 0)
-        {
-            // Choose a random enemy from the list
-            int randomIndex = Random.Range(0, enemies.Count);
-            GameObject enemyToDestroy = enemies[randomIndex];
-
-            // Destroy the chosen enemy
-            Destroy(enemyToDestroy);
-            enemies.RemoveAt(randomIndex);
-            Debug.Log("Enemy destroyed!");
-        }
-        else
-        {
-            Debug.Log("No enemies to destroy!");
-        }
-    }
 
 
 
