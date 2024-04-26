@@ -10,9 +10,9 @@ public class Skill : MonoBehaviour
 
     public virtual void Awake()
     {
-        pacmon = GetComponent<Pacmon>();
+        pacmon = GetComponentInParent<Pacmon>();
         rb = GetComponent<Rigidbody2D>();
-        atk = GetComponent<AttackInputHandler>();
+        atk = GetComponentInParent<AttackInputHandler>();
         pacmonpos = GameObject.Find("pokemon");
     }
 

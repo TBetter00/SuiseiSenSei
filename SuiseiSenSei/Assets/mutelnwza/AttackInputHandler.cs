@@ -21,9 +21,9 @@ public class AttackInputHandler : MonoBehaviour
     private void Awake()
     {
         pacmon = GetComponent<Pacmon>();
-        fireball = GetComponent<Fireball>();
-        firespread = GetComponent<FireSpread>();
-        longfire = GetComponent<Longfire>();
+        fireball = GetComponentInChildren<Fireball>();
+        firespread = GetComponentInChildren<FireSpread>();
+        longfire = GetComponentInChildren<Longfire>();
     }
 
     private void Update()
