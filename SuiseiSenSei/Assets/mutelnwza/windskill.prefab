@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1661472997649110176}
   m_Layer: 6
   m_Name: windskill
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
