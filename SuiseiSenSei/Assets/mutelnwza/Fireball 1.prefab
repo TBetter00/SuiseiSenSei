@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 3
+  dmgmultiplier: 2
 --- !u!114 &-4653135593082218443
 MonoBehaviour:
   m_ObjectHideFlags: 0

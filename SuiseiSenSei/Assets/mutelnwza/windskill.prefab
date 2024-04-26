@@ -204,3 +204,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 3
+  dmgmultiplier: 2
