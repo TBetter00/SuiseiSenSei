@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private bool hasSpawned1 = false;
     private bool hasSpawned2 = false;
     private bool isSpawningMonsters = false;
+    public Palette[] pellet;
     //public PelletManager pellet;
     //public Transform pellets;
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        pellet = FindObjectsOfType<Palette>();
         NewGame();
         GameObject pacmonGameObject = GameObject.Find("Pukkermon");
         if (pacmonGameObject != null)
@@ -60,11 +62,10 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        /*
-        foreach (Transform pellet in this.pellets) {
-            pellet.gameObject.SetActive(true);
+        for(int i = 0;i< pellet.Length; i++)
+        {
+            pellet[i].isEaten = false;
         }
-        */
         ResetState();
     }
 
