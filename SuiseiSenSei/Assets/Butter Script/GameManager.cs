@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     private bool hasSpawned1 = false;
     private bool hasSpawned2 = false;
     private bool isSpawningMonsters = false;
+    private bool hasSpawnedRepeat = false;
     public Palette[] pellet;
     //public PelletManager pellet;
     //public Transform pellets;
@@ -41,16 +43,9 @@ public class GameManager : MonoBehaviour
         }
         CheckMon1();
         CheckMon2();
+        StartCoroutine(SpawnMonRepeatly());
 
-        if ((pacmon.stage2 || pacmon.stage3) && !isSpawningMonsters)
-        {
-            StartSpawningMonsters();
-        }
-        // Stop spawning monsters if stage 4 is active
-        else if (pacmon.stageMega && isSpawningMonsters)
-        {
-            StopSpawningMonsters();
-        }
+
     }
 
     private void NewGame()
@@ -165,17 +160,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void StartSpawningMonsters()
+    IEnumerator SpawnMonRepeatly()
     {
-        isSpawningMonsters = true;
-        InvokeRepeating("SpawnMon1", 0f, 5f); // Start spawning monsters every 5 seconds
+        
+        if ((pacmon.stage2 || pacmon.stage3) && !hasSpawnedRepeat)
+        {
+            hasSpawnedRepeat = true;
+            Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(5);
+            hasSpawnedRepeat = false;
+            
+
+        }
+        
     }
 
-    private void StopSpawningMonsters()
-    {
-        isSpawningMonsters = false;
-        CancelInvoke("SpawnMon1"); // Stop spawning monsters
-    }
+
 
     /*
     public void PowerPellet(PowerPallet pellet)
