@@ -3,7 +3,7 @@ using UnityEngine;
 public class FireballHit : MonoBehaviour{
     
     private float Firetime;
-    private float AvailableTime=0.4f;
+    public float AvailableTime;
 
     private void Awake()
     {

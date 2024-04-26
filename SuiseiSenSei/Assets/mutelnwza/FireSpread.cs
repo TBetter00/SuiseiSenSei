@@ -2,27 +2,14 @@ using UnityEngine;
 
 public class FireSpread : Skill{
 
-    private float Firetime;
-    private float AvailableTime=1f;
+    [SerializeField] private GameObject firewall;
 
-    public override void Awake()
+    public void Update()
     {
-        base.Awake();
-        gameObject.SetActive(false);
     }
-
-    public override void SkillEnable()
+    public void Fire()
     {
-        base.SkillEnable();
-        Firetime = Time.time;
-        
-        gameObject.SetActive(true);
+        GameObject firecast = Instantiate(firewall, atk.location.position, atk.location.rotation);
     }
 
-    private void Update() {
-    if (Time.time >= Firetime+AvailableTime)
-    {
-        Destroy(gameObject);
-    }
-    }
 }
