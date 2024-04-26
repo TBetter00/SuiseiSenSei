@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class LongfireHit : MonoBehaviour{
     
-    private float Firetime;
+    protected float Firetime;
     public float AvailableTime;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         Firetime = Time.time;
     }
 
-    private void Update() {
+    protected virtual void Update() {
         if (Time.time >= Firetime+AvailableTime)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    protected virtual void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("block"))
         {Destroy(gameObject);}
     }

@@ -6,6 +6,7 @@ public class AttackInputHandler : MonoBehaviour
     private Fireball fireball;
     private FireSpread firespread;
     private Longfire longfire;
+    private Wind wind;
     private Pacmon pacmon;
 
     public Transform Leftlocation;
@@ -24,6 +25,7 @@ public class AttackInputHandler : MonoBehaviour
         fireball = GetComponentInChildren<Fireball>();
         firespread = GetComponentInChildren<FireSpread>();
         longfire = GetComponentInChildren<Longfire>();
+        wind = GetComponentInChildren<Wind>();
     }
 
     private void Update()
@@ -48,6 +50,11 @@ public class AttackInputHandler : MonoBehaviour
         else if (Input.GetKeyDown("space") && StateToAttack == 3)
         {
             longfire.Enter();
+        }
+
+        else if (Input.GetKeyDown("left ctrl")&&StateToAttack==3)
+        {
+            wind.Enter();
         }
     }
 
