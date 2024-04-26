@@ -8,14 +8,14 @@ public class Wind : Longfire
         base.Update();
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void SkillEnable()
     {
         base.SkillEnable();
+    }
+
+    public override void SkillDisable()
+    {
+        base.SkillDisable();
     }
 
     protected override IEnumerator ActiveDuration()

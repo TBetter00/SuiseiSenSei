@@ -7,6 +7,9 @@ public class Skill : MonoBehaviour
     public AttackInputHandler atk{ get; private set; }
     private Pacmon pacmon;
     public GameObject pacmonpos { get; private set; }
+    protected Palette palette;
+
+    public int Power;
 
     public virtual void Awake()
     {
@@ -18,6 +21,7 @@ public class Skill : MonoBehaviour
 
     public virtual void SkillEnable()
     {
+        Power--;
     }
 
     public virtual void SkillDisable()

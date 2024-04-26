@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Palette : MonoBehaviour
 {
     public GameManager GameManager;
+    private Skill skill;
     public GameObject pellet;
     public float DAYS;
     [HideInInspector]public bool isEaten = false;
@@ -21,6 +22,7 @@ public class Palette : MonoBehaviour
         }else if(collision.gameObject.CompareTag("pacmon") && isPowerUp1 && !isEaten)
         {
             isEaten = true;
+            skill.Power ++;
         }
     }
     private void Update()

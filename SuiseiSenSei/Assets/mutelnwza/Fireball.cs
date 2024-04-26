@@ -11,7 +11,12 @@ public class Fireball : Skill{
     public override void SkillEnable()
     {
         base.SkillEnable();
-        
+        Cast();
+
+    }
+
+    private void Cast()
+    {
         GameObject firecast = Instantiate(fireball, atk.location.position, atk.location.rotation);
         if (atk.location == atk.Leftlocation || atk.location == atk.Rightlocation)
         {
