@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 9183778424306781256}
   - component: {fileID: 5913803757344235729}
   - component: {fileID: 8013083683508181683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Big
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4730005, y: -2.2511249, z: -0.0441718}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722306835169541589}
@@ -98,7 +98,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.09
   speedMultiplier: 0.09
-  initialDirection: {x: 0, y: 0}
+  initialDirection: {x: 0, y: 1}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 7926473561995593461}
   - component: {fileID: 6170747771199988114}
   - component: {fileID: 8934924007366495312}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3119685643078725561}
   - component: {fileID: 4102739709151937140}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 1727878155656529244}
   - component: {fileID: 1790691764869393932}
   - component: {fileID: 8158766550344827885}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 8595228048706906465}
   - component: {fileID: 3798273808200507675}
   - component: {fileID: 4438571184906973962}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2708084557476026709}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

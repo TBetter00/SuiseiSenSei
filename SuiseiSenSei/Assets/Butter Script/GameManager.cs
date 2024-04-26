@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentBigEnemy;
     private bool hasSpawned1 = false;
     private bool hasSpawned2 = false;
+    private bool isSpawningMonsters = false;
     //public PelletManager pellet;
     //public Transform pellets;
 
@@ -37,8 +38,17 @@ public class GameManager : MonoBehaviour
             NewGame();
         }
         CheckMon1();
+        CheckMon2();
 
-        SpawnRepeat();
+        if ((pacmon.stage2 || pacmon.stage3) && !isSpawningMonsters)
+        {
+            StartSpawningMonsters();
+        }
+        // Stop spawning monsters if stage 4 is active
+        else if (pacmon.stageMega && isSpawningMonsters)
+        {
+            StopSpawningMonsters();
+        }
     }
 
     private void NewGame()
@@ -148,18 +158,22 @@ public class GameManager : MonoBehaviour
 
     public void SpawnMon2()
     {
-        if (pacmon.stage1)
+        if (pacmon.stage2)
         {
             currentBigEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
         }
     }
 
-    public void SpawnRepeat()
+    private void StartSpawningMonsters()
     {
-        if (pacmon.stage2 || pacmon.stage3)
-        {
-           InvokeRepeating("SpawnMon1", 0f, 5f);
-        }
+        isSpawningMonsters = true;
+        InvokeRepeating("SpawnMon1", 0f, 5f); // Start spawning monsters every 5 seconds
+    }
+
+    private void StopSpawningMonsters()
+    {
+        isSpawningMonsters = false;
+        CancelInvoke("SpawnMon1"); // Stop spawning monsters
     }
 
     /*
