@@ -24,7 +24,7 @@ public class SpreadHitbox : MonoBehaviour{
 
         if(collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)"){enemy.Die();}
 
-        else if(collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)"){
+        else if(collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)" && gameObject.activeSelf){
             dealingdmg = true;
             StartCoroutine(Attacking());}
     }
