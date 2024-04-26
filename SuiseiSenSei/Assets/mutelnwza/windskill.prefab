@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6078647229331578038}
   - component: {fileID: -2659612010801826183}
   - component: {fileID: 1661472997649110176}
-  m_Layer: 6
+  - component: {fileID: -522260924719281878}
+  m_Layer: 12
   m_Name: windskill
   m_TagString: skill
   m_Icon: {fileID: 0}
@@ -170,7 +171,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -190,3 +191,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.012556583, y: 0.03557694}
   m_Size: {x: 0.53122157, y: 0.84903836}
   m_Direction: 0
+--- !u!114 &-522260924719281878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620384539876990972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b76a86529bf5140a1e2cd92c3adcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3

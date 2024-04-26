@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4952042984533299381}
   - component: {fileID: 376578402311944866}
   - component: {fileID: 875355844836818258}
+  - component: {fileID: 3594919321607771898}
   - component: {fileID: -4653135593082218443}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Fireball 1
   m_TagString: skill
   m_Icon: {fileID: 0}
@@ -103,7 +104,7 @@ CapsuleCollider2D:
     m_Bits: 10240
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 576
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -163,6 +164,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvailableTime: 0.5
+--- !u!114 &3594919321607771898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89560756333566540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b76a86529bf5140a1e2cd92c3adcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3
 --- !u!114 &-4653135593082218443
 MonoBehaviour:
   m_ObjectHideFlags: 0

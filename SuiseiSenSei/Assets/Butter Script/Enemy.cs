@@ -59,4 +59,8 @@ public class Enemy : MonoBehaviour
             FindObjectOfType<GameManager>().PacmonKilled();
         }
     }
+
+    public void Die(){
+        gameObject.SetActive(false);
+    }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - pacmon
+  - block
+  - enemy
+  - skill
   layers:
   - Default
   - TransparentFX
