@@ -1367,8 +1367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: -0.000030517578}
-  m_SizeDelta: {x: 614.505, y: 107.08}
+  m_AnchoredPosition: {x: 729.2753, y: -0.000030517578}
+  m_SizeDelta: {x: 1337.0555, y: 107.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &606276713
 PlayableDirector:
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Prang - art 2d,
+  m_text: Prang - art 2d, skill,animation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56e2ee41fe4538745a7a7b4727dff217, type: 2}
   m_sharedMaterial: {fileID: -1401458193668575293, guid: 56e2ee41fe4538745a7a7b4727dff217,
@@ -2176,8 +2176,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: -0.000030517578}
-  m_SizeDelta: {x: 614.505, y: 107.08}
+  m_AnchoredPosition: {x: 852.6671, y: -0.000030517578}
+  m_SizeDelta: {x: 1583.8392, y: 107.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &850945192
 PlayableDirector:
@@ -2619,8 +2619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: -0.000030517578}
-  m_SizeDelta: {x: 614.505, y: 107.08}
+  m_AnchoredPosition: {x: 854.3657, y: -0.000030517578}
+  m_SizeDelta: {x: 1587.2365, y: 107.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &1087744174
 PlayableDirector:
@@ -3386,8 +3386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: -0.000030517578}
-  m_SizeDelta: {x: 614.505, y: 107.08}
+  m_AnchoredPosition: {x: 813.59937, y: -0.000030517578}
+  m_SizeDelta: {x: 1505.7037, y: 107.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &1876677074
 PlayableDirector:
@@ -3669,8 +3669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: -0.000030517578}
-  m_SizeDelta: {x: 614.505, y: 107.08}
+  m_AnchoredPosition: {x: 780.2243, y: -0.000030517578}
+  m_SizeDelta: {x: 1438.9535, y: 107.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &2040737837
 PlayableDirector:
