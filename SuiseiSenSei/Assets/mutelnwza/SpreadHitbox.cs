@@ -10,6 +10,13 @@ public class SpreadHitbox : MonoBehaviour{
     private BigEnemy bigEnemy;
     private Pacmon pacmon;
 
+    private void Awake()
+    {
+        pacmon = FindObjectOfType<Pacmon>();
+        enemy = FindObjectOfType<Enemy>();
+        bigEnemy = FindObjectOfType<BigEnemy>();
+    }
+
     private void OnCollisionEnter2D (Collision2D collision)
     {
         if (pacmon.stageMega){finaldmg=dmg*dmgmultiplier;}
