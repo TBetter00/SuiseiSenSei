@@ -98,7 +98,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -186,9 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10cc8057ab46964db6009fd48f5ba14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBehavior: {fileID: 5719636679857312663}
-  target: {fileID: 0}
-  points: 200
   currentHP: 0
   maxHP: 10
   Healthbar: {fileID: 8934924007366495312}

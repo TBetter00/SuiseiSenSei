@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BigEnemy : Enemy
+public class BigEnemy : MonoBehaviour
 {
 
     public float currentHP;
@@ -15,13 +15,6 @@ public class BigEnemy : Enemy
         Healthbar.SetHealth(currentHP,maxHP);
     }
 
-    // Override ResetState method to reset HP
-    public override void ResetState()
-    {
-        base.ResetState();
-        currentHP = maxHP;
-
-    }
 
     // Method to decrease HP when attacked
     public void TakeDamage(int damage)
