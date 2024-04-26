@@ -5,18 +5,18 @@ using UnityEngine;
 public class Longfire : Skill{
 
     public bool onActive;
-    private float timer=0.5f;
+    [SerializeField]private float timer=1f;
     private float force = 15f;
     public RigidbodyConstraints2D constraints;
     [SerializeField] private GameObject fire;
 
-    public void Update()
+    public virtual void Update()
     {
         if (onActive){
             SkillEnable();}
     }
 
-    public void Enter()
+    public virtual void Enter()
     {
         onActive = true;
         StartCoroutine(ActiveDuration());
@@ -34,7 +34,7 @@ public class Longfire : Skill{
         firecast.GetComponent<Rigidbody2D>().AddForce(atk.location.up*force, ForceMode2D.Impulse);
     }
 
-    private IEnumerator ActiveDuration()
+    protected virtual IEnumerator ActiveDuration()
     {
         yield return new WaitForSeconds(timer);
         onActive = false;
