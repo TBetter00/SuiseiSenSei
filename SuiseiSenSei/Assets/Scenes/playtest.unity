@@ -6605,7 +6605,7 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -29793,7 +29793,9 @@ MonoBehaviour:
   enemy: {fileID: 4771772059023595070, guid: 49bd88720458fd94982e7f905bf5b87e, type: 3}
   bigEnemy: {fileID: 3163885172587481606, guid: 43d8a52daf7042e44bb2b960c39cbf32,
     type: 3}
+  spawnAmountAfterDeath: 2
   pellet: []
+  initialEnemyCount: 1
 --- !u!4 &1582214361
 Transform:
   m_ObjectHideFlags: 0
@@ -39594,7 +39596,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 6976
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -39623,21 +39625,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.3628118, y: 0.6977426}
+    - - {x: 0.65780354, y: 0.71881306}
       - {x: 0.2926795, y: 1}
       - {x: -0.12255797, y: 1.0057929}
-      - {x: -0.546939, y: 0.076215416}
+      - {x: -1.5179701, y: -0.18653426}
       - {x: -0.89908, y: -0.012806661}
       - {x: -1.1423784, y: -0.48140046}
       - {x: -0.6716828, y: -0.33501795}
+      - {x: -0.8635504, y: -1.3887882}
       - {x: -0.29784775, y: -0.77683437}
-      - {x: -0.12468773, y: -1.0115857}
-      - {x: 0.053627893, y: -1.0153124}
-      - {x: 0.37949187, y: -0.6940884}
-      - {x: 0.6573149, y: -0.8551795}
+      - {x: -0.5016764, y: -1.8912253}
+      - {x: -0.2548173, y: -1.5293877}
+      - {x: 0.44803518, y: -1.710815}
+      - {x: 0.531652, y: -0.84375644}
       - {x: 0.9859723, y: -0.4859723}
-      - {x: 0.95700824, y: -0.34725696}
-      - {x: 0.74511594, y: -0.012806669}
+      - {x: 1.6424419, y: -1.0783865}
+      - {x: 0.9164743, y: 0.42130113}
   m_UseDelaunayMesh: 0
 --- !u!212 &2029040966
 SpriteRenderer:
