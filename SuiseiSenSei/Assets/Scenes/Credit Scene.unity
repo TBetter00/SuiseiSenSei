@@ -2053,10 +2053,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 320382205}
-        m_TargetAssemblyTypeName: fadeBetweencanvas, Assembly-CSharp
-        m_MethodName: ChangeCanvasAndFade
-        m_Mode: 1
+      - m_Target: {fileID: 621021189}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
