@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,8 +47,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 && Input.anyKeyDown)
+        if (this.lives <= 0)
         {
+            SceneManager.LoadScene("GameOver");
             NewGame();
         }
         CheckMon1();
@@ -206,7 +208,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
+    
     void Spawn2EnemiesAfterDie()
     {
         // Create a temporary list to store new enemies
