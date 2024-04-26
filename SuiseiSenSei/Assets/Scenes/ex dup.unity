@@ -33246,6 +33246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pellet: []
+  PowerUpnum: 1
+  pacmon: {fileID: 800160751296053544}
 --- !u!4 &1795000941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8896585949985338690, guid: f19465fe690cd39479ff7fac260ffb40,
@@ -41701,7 +41703,7 @@ AudioSource:
   m_Volume: 0.806
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
