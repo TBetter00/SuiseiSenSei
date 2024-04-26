@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class GameManager : MonoBehaviour
     private bool hasSpawned2 = false;
     private bool isSpawningMonsters = false;
     private bool hasSpawnedRepeat = false;
+    private bool hasSpawned3 = false;
+    public int spawnAmountAfterDeath = 2;
     public Palette[] pellet;
+    private List<GameObject> enemies = new List<GameObject>();
+    public int initialEnemyCount = 1;
+    
+    
+
     //public PelletManager pellet;
     //public Transform pellets;
 
@@ -38,7 +46,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 && Input.anyKeyDown){
+        if (this.lives <= 0 && Input.anyKeyDown)
+        {
             NewGame();
         }
         CheckMon1();
@@ -46,6 +55,19 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnMonRepeatly());
 
 
+        if (pacmon.stage3 && !hasSpawned3)
+        {
+            hasSpawned3 = true;
+            SpawnMon3(initialEnemyCount);
+        }
+
+        Spawn2EnemiesAfterDie();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            DestroyRandomEnemy();
+        }
+        
     }
 
     private void NewGame()
@@ -167,13 +189,75 @@ public class GameManager : MonoBehaviour
         {
             hasSpawnedRepeat = true;
             Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(30);
             hasSpawnedRepeat = false;
-            
 
         }
         
     }
+
+    void SpawnMon3(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GameObject enemyy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+            enemies.Add(enemyy);
+            Debug.Log("Enemy spawned!");
+        }
+
+    }
+
+    void Spawn2EnemiesAfterDie()
+    {
+        // Create a temporary list to store new enemies
+        List<GameObject> newEnemies = new List<GameObject>();
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i] == null) // Check if an enemy has been destroyed
+            {
+                enemies.RemoveAt(i);
+                // Add new enemies to the temporary list
+                for (int j = 0; j < spawnAmountAfterDeath; j++)
+                {
+                    GameObject newEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+                    newEnemies.Add(newEnemy);
+                    Debug.Log("New enemy spawned!");
+                }
+            }
+        }
+
+        // Add new enemies from the temporary list to the main enemies list
+        enemies.AddRange(newEnemies);
+
+        // Debug the list of enemies after processing
+        Debug.Log("Remaining Enemies:");
+        foreach (GameObject enemy in enemies)
+        {
+            Debug.Log(enemy != null ? enemy.name : "null");
+        }
+    }
+
+    void DestroyRandomEnemy()
+    {
+        if (enemies.Count > 0)
+        {
+            // Choose a random enemy from the list
+            int randomIndex = Random.Range(0, enemies.Count);
+            GameObject enemyToDestroy = enemies[randomIndex];
+
+            // Destroy the chosen enemy
+            Destroy(enemyToDestroy);
+            enemies.RemoveAt(randomIndex);
+            Debug.Log("Enemy destroyed!");
+        }
+        else
+        {
+            Debug.Log("No enemies to destroy!");
+        }
+    }
+
+
 
 
 
