@@ -6,9 +6,10 @@ public class AttackInputHandler : MonoBehaviour
     private Fireball fireball;
     private FireSpread firespread;
     private Longfire longfire;
-    private Wind wind;
     private Pacmon pacmon;
-    private Skill skill;
+
+    private PowerCheck powerCheck;
+    private Palette palette;
 
     public Transform Leftlocation;
     public Transform Rightlocation;
@@ -26,7 +27,7 @@ public class AttackInputHandler : MonoBehaviour
         fireball = GetComponentInChildren<Fireball>();
         firespread = GetComponentInChildren<FireSpread>();
         longfire = GetComponentInChildren<Longfire>();
-        wind = GetComponentInChildren<Wind>();
+        powerCheck = GetComponent<PowerCheck>();
     }
 
     private void Update()
@@ -38,24 +39,19 @@ public class AttackInputHandler : MonoBehaviour
 
     public void GetAttackInput()
     {
-        if (Input.GetKeyDown("space") && StateToAttack==1 && skill.Power>=1)
+        if (Input.GetKeyDown("space") && StateToAttack==1 && powerCheck.Power>=1)
         {
             fireball.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack==2 && skill.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack==2 && powerCheck.Power>=1)
         {
             firespread.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack == 3 && skill.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack == 3 || StateToAttack==4 && powerCheck.Power>=1)
         {
             longfire.SkillEnable();
-        }
-
-        else if (Input.GetKeyDown("left ctrl")&&StateToAttack==3 && skill.Power>=1)
-        {
-            wind.SkillEnable();
         }
     }
 

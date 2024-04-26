@@ -38,10 +38,16 @@ public class Pacmon : MonoBehaviour
     public bool AlreadyBlink3rd;
     public bool AlreadyBlink4th;
 
+    public Palette[] palette;
+
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
         animator = GetComponent<Animator>();
+    }
+
+    private void Start(){
+        palette = FindObjectsOfType<Palette>();
     }
 
     private void Update()

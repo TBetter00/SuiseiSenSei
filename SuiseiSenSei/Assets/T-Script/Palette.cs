@@ -6,13 +6,19 @@ using UnityEngine.UI;
 public class Palette : MonoBehaviour
 {
     public GameManager GameManager;
-    private Skill skill;
+    public int powerget;
     public GameObject pellet;
     public float DAYS;
     [HideInInspector]public bool isEaten = false;
     public bool isPowerUp1;
     public GameObject PowerUp1;
     [HideInInspector]public bool CoolDown = false;
+    public PowerCheck powerCheck;
+
+    private void Awake(){
+        powerCheck = FindObjectOfType<PowerCheck>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("pacmon") && !isPowerUp1 && !isEaten)
@@ -22,7 +28,7 @@ public class Palette : MonoBehaviour
         }else if(collision.gameObject.CompareTag("pacmon") && isPowerUp1 && !isEaten)
         {
             isEaten = true;
-            skill.Power ++;
+            powerCheck.AddPower();
         }
     }
     private void Update()

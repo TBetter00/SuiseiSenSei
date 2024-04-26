@@ -5,6 +5,12 @@ public class FireballHitbox : MonoBehaviour{
     private Enemy enemy;
     private BigEnemy bigEnemy;
 
+    private void Awake()
+    {
+        enemy = FindObjectOfType<Enemy>();
+        bigEnemy = FindObjectOfType<BigEnemy>();
+    }
+
     private void OnCollisionEnter2D (Collision2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))

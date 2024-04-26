@@ -7,9 +7,8 @@ public class Skill : MonoBehaviour
     public AttackInputHandler atk{ get; private set; }
     private Pacmon pacmon;
     public GameObject pacmonpos { get; private set; }
-    protected Palette palette;
-
-    public int Power;
+    public PowerCheck powerCheck;
+    
 
     public virtual void Awake()
     {
@@ -17,11 +16,12 @@ public class Skill : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         atk = GetComponentInParent<AttackInputHandler>();
         pacmonpos = GameObject.Find("pokemon");
+        powerCheck = FindObjectOfType<PowerCheck>();
     }
 
     public virtual void SkillEnable()
     {
-        Power--;
+        powerCheck.RemovePower();
     }
 
     public virtual void SkillDisable()
