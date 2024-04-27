@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour
     private void ResetState()
     {
         this.pacmon.ResetState();
+        this.pacmon.GetComponent<SpriteRenderer>().enabled = true;
+        this.pacmon.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     private void SetScore(int score)
@@ -105,7 +107,8 @@ public class GameManager : MonoBehaviour
 
     public void PacmonKilled()
     {
-        this.pacmon.gameObject.SetActive(false);
+        this.pacmon.GetComponent<SpriteRenderer>().enabled = false;
+        this.pacmon.GetComponent<CircleCollider2D>().enabled = false;
         SetLives(this.lives - 1);
 
         if (this.lives > 0){
