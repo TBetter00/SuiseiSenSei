@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             NewGame();
         }
+        setNewRound();
         CheckMon1();
         CheckMon2();
         StartCoroutine(SpawnMonRepeatly());
@@ -67,12 +68,33 @@ public class GameManager : MonoBehaviour
         SetLives(3);
         NewRound();
     }
+    private void setNewRound()
+    {
+        if (!StillSomePelletLeft())
+        {
+            NewRound();
+        }
+    }
+    
+    private bool StillSomePelletLeft()
+    {
+        for (int i = 0; i < pellet.Length; i++)
+        {
+            if (!pellet[i].isEaten)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void NewRound()
     {
         for(int i = 0;i< pellet.Length; i++)
         {
             pellet[i].isEaten = false;
+            pellet[i].isPowerUp1 = false;
+            pellet[i].IsPowerUp2 = false;
         }
         ResetState();
     }
@@ -183,7 +205,7 @@ public class GameManager : MonoBehaviour
         {
             hasSpawnedRepeat = true;
             Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(15);
             hasSpawnedRepeat = false;
 
         }
@@ -196,7 +218,7 @@ public class GameManager : MonoBehaviour
         {
             hasSpawned3 = true;
             Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(15);
             hasSpawned3 = false;
         }
     }

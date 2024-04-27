@@ -217,18 +217,18 @@ public class Pacmon : MonoBehaviour
     }
     public void ChangeStageWithScore()
     {
-        if (!blinkingeggto1 && GameManager.score >= 300 && !AlreadyBlink1st)
+        if (!blinkingeggto1 && GameManager.score >= 700 && !AlreadyBlink1st)
         {
             blinkingeggto1 = true;
             AlreadyBlink1st = true;
 
         }
-        else if (!blinking1to2 && GameManager.score >= 800 && !AlreadyBlink2nd)
+        else if (!blinking1to2 && GameManager.score >= 1800 && !AlreadyBlink2nd)
         {
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >=2000 && !AlreadyBlink3rd)
+        else if (!blinking2to3 && GameManager.score >=4000 && !AlreadyBlink3rd)
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
