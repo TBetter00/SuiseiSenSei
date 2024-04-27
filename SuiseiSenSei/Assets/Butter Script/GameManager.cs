@@ -100,9 +100,9 @@ public class GameManager : MonoBehaviour
         this.lives = lives;
     }
 
-    public void EnemyKilled(Enemy enemy)
+    public void EnemyKilled(int point)
     {
-        SetScore(this.score + enemy.points);
+        SetScore(this.score + point);
     }
 
     public void PacmonKilled()
