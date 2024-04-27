@@ -36,7 +36,7 @@ public class Palette : MonoBehaviour
     }
     private void Update()
     {
-        if(isPowerUp1 == true)
+        if (isPowerUp1)
         {
             pellet.SetActive(false);
             if (!isEaten)
@@ -44,22 +44,13 @@ public class Palette : MonoBehaviour
                 PowerUp1.SetActive(true);
                 StartCoroutine(DeactivatePowerUp(DAYS));
             }
-            else if(isEaten)
+            else
             {
                 PowerUp1.SetActive(false);
             }
-            
-        }else if(isPowerUp1 == false)
-        {   
-            if (!isEaten)
-            {   
-                pellet.SetActive(true);
-            }
-            if (isEaten)
-            {
-                pellet.SetActive(false);
-            }
-        }else if(IsPowerUp2 == true)
+            return;
+        }
+        else if (IsPowerUp2)
         {
             pellet.SetActive(false);
             if (!isEaten)
@@ -67,10 +58,21 @@ public class Palette : MonoBehaviour
                 PowerUp2.SetActive(true);
                 StartCoroutine(DeactivatePowerUp2(DAYS2));
             }
-            else if (isEaten)
+            else
             {
                 PowerUp2.SetActive(false);
             }
+            return;
+        }
+
+        // If no power-up is active, show the regular pellet
+        if (!isEaten)
+        {
+            pellet.SetActive(true);
+        }
+        else
+        {
+            pellet.SetActive(false);
         }
     }
     IEnumerator DeactivatePowerUp(float delay)
