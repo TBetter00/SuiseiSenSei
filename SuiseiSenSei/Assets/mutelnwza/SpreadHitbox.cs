@@ -1,9 +1,9 @@
 using System.Collections;
-using Mono.Cecil.Cil;
 using UnityEditor;
 using UnityEngine;
 
-public class SpreadHitbox : MonoBehaviour{
+public class SpreadHitbox : MonoBehaviour
+{
     [SerializeField]private int dmg;
     [SerializeField]private int dmgmultiplier;
     private int finaldmg;
