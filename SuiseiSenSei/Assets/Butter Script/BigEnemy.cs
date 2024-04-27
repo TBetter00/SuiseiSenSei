@@ -27,14 +27,14 @@ public class BigEnemy : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-            Debug.Log(currentHP);
-        }
-    }
+    // public void Update()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.Space))
+    //     {
+    //         TakeDamage(1);
+    //         Debug.Log(currentHP);
+    //     }
+    // }
 
     // Method to handle the death of the big enemy
     private void Die()
