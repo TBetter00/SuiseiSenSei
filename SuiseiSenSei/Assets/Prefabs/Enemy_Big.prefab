@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 9183778424306781256}
   - component: {fileID: 5913803757344235729}
   - component: {fileID: 8013083683508181683}
+  - component: {fileID: 8724153128512806923}
   m_Layer: 7
   m_Name: Enemy_Big
   m_TagString: enemy
@@ -145,7 +146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2093051427, guid: 9c6b4757e80a55c4b9cd41ac5ca8eb8c, type: 3}
+  m_Sprite: {fileID: -647954791, guid: 93acaf9470161d64cad1436481d8ce74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,6 +258,27 @@ MonoBehaviour:
   target: {fileID: 0}
   gameManager: {fileID: 0}
   points: 400
+--- !u!95 &8724153128512806923
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163885172587481606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4cdd8e9022d43a4cba8f57d7d389141, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4303609506407036622
 GameObject:
   m_ObjectHideFlags: 0
