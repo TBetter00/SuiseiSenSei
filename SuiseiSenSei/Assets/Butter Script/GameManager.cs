@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnBigMonRepeatly()
     {
-        if ((pacmon.stage3) && !hasSpawned3)
+        if ((pacmon.stage3 || pacmon.stageMega) && !hasSpawned3)
         {
             hasSpawned3 = true;
             Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);

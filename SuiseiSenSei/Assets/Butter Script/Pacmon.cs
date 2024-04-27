@@ -223,12 +223,12 @@ public class Pacmon : MonoBehaviour
             AlreadyBlink1st = true;
 
         }
-        else if (!blinking1to2 && GameManager.score >= 350 && !AlreadyBlink2nd)
+        else if (!blinking1to2 && GameManager.score >= 800 && !AlreadyBlink2nd)
         {
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >= 400 && !AlreadyBlink3rd)
+        else if (!blinking2to3 && GameManager.score >=2000 && !AlreadyBlink3rd)
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
