@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyScatter : EnemyBehavior
 {
-    private Animator animator;
+    public Animator animator;
 
     private void Start()
     {
         // Get reference to the Animator component
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     private void OnDisable()

@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  animator: {fileID: 8724153128512806923}
 --- !u!114 &7606814572623155707
 MonoBehaviour:
   m_ObjectHideFlags: 0

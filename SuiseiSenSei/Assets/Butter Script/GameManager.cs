@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private bool isSpawningMonsters = false;
     private bool hasSpawnedRepeat = false;
     private bool hasSpawned3 = false;
+    private bool hasSpawnedMega = false;
     public int spawnAmountAfterDeath = 2;
     public Palette[] pellet;
     private List<GameObject> enemies = new List<GameObject>();
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             NewGame();
         }
+        setNewRound();
         CheckMon1();
         CheckMon2();
         StartCoroutine(SpawnMonRepeatly());
@@ -67,12 +69,33 @@ public class GameManager : MonoBehaviour
         SetLives(3);
         NewRound();
     }
+    private void setNewRound()
+    {
+        if (!StillSomePelletLeft())
+        {
+            NewRound();
+        }
+    }
+    
+    private bool StillSomePelletLeft()
+    {
+        for (int i = 0; i < pellet.Length; i++)
+        {
+            if (!pellet[i].isEaten)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void NewRound()
     {
         for(int i = 0;i< pellet.Length; i++)
         {
             pellet[i].isEaten = false;
+            pellet[i].isPowerUp1 = false;
+            pellet[i].IsPowerUp2 = false;
         }
         ResetState();
     }
@@ -183,7 +206,7 @@ public class GameManager : MonoBehaviour
         {
             hasSpawnedRepeat = true;
             Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(15);
             hasSpawnedRepeat = false;
 
         }
@@ -192,12 +215,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnBigMonRepeatly()
     {
-        if ((pacmon.stage3 || pacmon.stageMega) && !hasSpawned3)
+        if ((pacmon.stage3) && !hasSpawned3)
         {
             hasSpawned3 = true;
             Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(10);
             hasSpawned3 = false;
+        }
+        if (pacmon.stageMega && !hasSpawnedMega)
+        {
+            hasSpawnedMega = true;
+            Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(5);
+            hasSpawnedMega = false;
         }
     }
 
