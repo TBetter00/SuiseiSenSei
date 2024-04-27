@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnBigMonRepeatly()
     {
             hasSpawned3 = true;
-            Instantiate(bigEnemyenemy, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(10);
             hasSpawnedRepeat = false;
     }

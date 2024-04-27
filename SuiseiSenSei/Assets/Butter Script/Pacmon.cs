@@ -228,7 +228,7 @@ public class Pacmon : MonoBehaviour
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >= 400 && !AlreadyBlink3rd )
+        else if (!blinking2to3 && GameManager.score >= 400 && !AlreadyBlink3rd)
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
@@ -237,11 +237,25 @@ public class Pacmon : MonoBehaviour
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
-            //StartCoroutine(Waitfor());
+        }else if(!blinking3to4 && CheckPacmonMega() && !AlreadyBlink4th)
+        {
+            blinking3to4 = true;
+            AlreadyBlink4th = true;
+            StartCoroutine(Waitfor());
         }
     }
 
-
+    public bool CheckPacmonMega()
+    {
+        for (int i = 0;i< palette.Length; i++)
+        {
+            if (palette[i].Powerup2Eaten)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     IEnumerator changeeggto1()
     {
         animator.Play("changeeggto1");
@@ -289,10 +303,12 @@ public class Pacmon : MonoBehaviour
     IEnumerator Waitfor()
     {
         yield return new WaitForSeconds(cooldown);
-        if (!blinking4to3 && !AlreadyBlink5th && GameManager.score >= 500)
+        for (int i = 0; i < palette.Length; i++)
         {
-            blinking4to3 = true;
-            AlreadyBlink5th = true;
+            palette[i].Powerup2Eaten = false;
         }
+        isBlinking4to3 = true;
+        AlreadyBlink5th = false;
+        AlreadyBlink4th = false;
     }
 }
