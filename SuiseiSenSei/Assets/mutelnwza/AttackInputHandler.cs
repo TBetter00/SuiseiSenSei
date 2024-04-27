@@ -6,6 +6,7 @@ public class AttackInputHandler : MonoBehaviour
     private Fireball fireball;
     private FireSpread firespread;
     private Longfire longfire;
+    private NewFire newFire;
     private Pacmon pacmon;
 
     private PowerCheck powerCheck;
@@ -28,6 +29,7 @@ public class AttackInputHandler : MonoBehaviour
         firespread = GetComponentInChildren<FireSpread>();
         longfire = GetComponentInChildren<Longfire>();
         powerCheck = GetComponent<PowerCheck>();
+        newFire = GetComponentInChildren<NewFire>();
     }
 
     private void Update()
@@ -46,7 +48,7 @@ public class AttackInputHandler : MonoBehaviour
 
         else if (Input.GetKeyDown("space") && StateToAttack==2 && powerCheck.Power>=1)
         {
-            firespread.SkillEnable();
+            newFire.SkillEnable();
         }
 
         else if (Input.GetKeyDown("space") && StateToAttack == 3 && powerCheck.Power>=1)
