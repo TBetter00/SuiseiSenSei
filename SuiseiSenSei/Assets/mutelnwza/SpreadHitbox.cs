@@ -1,4 +1,6 @@
 using System.Collections;
+using Mono.Cecil.Cil;
+using UnityEditor;
 using UnityEngine;
 
 public class SpreadHitbox : MonoBehaviour{
@@ -13,8 +15,6 @@ public class SpreadHitbox : MonoBehaviour{
     private void Awake()
     {
         pacmon = FindObjectOfType<Pacmon>();
-        enemy = FindObjectOfType<Enemy>();
-        bigEnemy = FindObjectOfType<BigEnemy>();
     }
 
     private void OnCollisionEnter2D (Collision2D collision)
@@ -22,9 +22,12 @@ public class SpreadHitbox : MonoBehaviour{
         if (pacmon.stageMega){finaldmg=dmg*dmgmultiplier;}
         else{finaldmg=dmg;}
 
-        if((collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)")&&gameObject.activeSelf){enemy.Die();}
+        if((collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)")&&gameObject.activeSelf){
+            enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.Die();}
 
         else if((collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)")&&gameObject.activeSelf){
+            bigEnemy = collision.gameObject.GetComponent<BigEnemy>();
             dealingdmg = true;
             StartCoroutine(Attacking());}
     }
