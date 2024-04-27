@@ -92,7 +92,7 @@ public class Pacmon : MonoBehaviour
             blinking4to3 = false;
             //AlreadyBlink5th = false;
         }
-        Debug.Log("Stage :" + GetCurrentStage());
+        // Debug.Log("Stage :" + GetCurrentStage());
         
     }
 

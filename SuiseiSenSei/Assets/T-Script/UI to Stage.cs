@@ -68,8 +68,8 @@ public class UItoStage : MonoBehaviour
                 Third.SetActive(false);
                 break;
         }
-        Debug.Log("pacmon.GetCurrentStage :" + pacmon.GetCurrentStage());
-        Debug.Log("gameManager.lives :" + gameManager.lives);
+        // Debug.Log("pacmon.GetCurrentStage :" + pacmon.GetCurrentStage());
+        // Debug.Log("gameManager.lives :" + gameManager.lives);
         for(int i = 0; i < Stage0.Length; i++)
         {
             if(i < gameManager.lives)

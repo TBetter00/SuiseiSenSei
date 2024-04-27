@@ -84,14 +84,14 @@ public class Palette : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         isPowerUp1 = false;
-        Debug.Log("Deactivated");
+        // Debug.Log("Deactivated");
         PowerUp1.SetActive(false);
     }
     IEnumerator DeactivatePowerUp2(float delay)
     {
         yield return new WaitForSeconds(delay);
         IsPowerUp2 = false;
-        Debug.Log("Deactivated 2");
+        // Debug.Log("Deactivated 2");
         PowerUp2.SetActive(false);
     }
 }

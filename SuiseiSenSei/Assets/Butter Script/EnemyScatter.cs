@@ -29,7 +29,7 @@ public class EnemyScatter : EnemyBehavior
             }
 
             this.enemy.movement.SetDirection(node.availableDirections[index]);
-            Debug.Log("index="+ node.availableDirections.Count);
+            // Debug.Log("index="+ node.availableDirections.Count);
         }
     }
 

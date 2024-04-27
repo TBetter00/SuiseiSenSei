@@ -55,7 +55,7 @@ public class PelletRoller2 : MonoBehaviour
             pellet[i].IsPowerUp2 = true;
         }
 
-        Debug.Log("Shuffling complete");
+        // Debug.Log("Shuffling complete");
     }
 
     private bool FindAnyPowerUp2()
