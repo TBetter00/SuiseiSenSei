@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private bool isSpawningMonsters = false;
     private bool hasSpawnedRepeat = false;
     private bool hasSpawned3 = false;
+    private bool hasSpawnedMega = false;
     public int spawnAmountAfterDeath = 2;
     public Palette[] pellet;
     private List<GameObject> enemies = new List<GameObject>();
@@ -214,12 +215,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnBigMonRepeatly()
     {
-        if ((pacmon.stage3 || pacmon.stageMega) && !hasSpawned3)
+        if ((pacmon.stage3) && !hasSpawned3)
         {
             hasSpawned3 = true;
             Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(15);
+            yield return new WaitForSeconds(10);
             hasSpawned3 = false;
+        }
+        if (pacmon.stageMega && !hasSpawnedMega)
+        {
+            hasSpawnedMega = true;
+            Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(5);
+            hasSpawnedMega = false;
         }
     }
 
