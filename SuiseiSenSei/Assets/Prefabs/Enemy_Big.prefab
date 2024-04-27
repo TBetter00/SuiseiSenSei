@@ -255,7 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 5719636679857312663}
   target: {fileID: 0}
-  points: 200
+  gameManager: {fileID: 0}
+  points: 400
 --- !u!1 &4303609506407036622
 GameObject:
   m_ObjectHideFlags: 0

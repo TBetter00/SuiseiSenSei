@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public Pacmon pacmon { get; private set; }
     public EnemyBehavior initialBehavior;
     public Transform target;
+    public GameManager gameManager;
 
 
     public int points = 200;
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
         this.chase = GetComponent<EnemyChase>();
         this.frightened = GetComponent<EnemyFrightened>();
         pacmon = FindObjectOfType<Pacmon>();
+        gameManager = FindObjectOfType<GameManager>();
 
     }
 
@@ -68,5 +70,6 @@ public class Enemy : MonoBehaviour
 
     public void Die(){
         gameObject.SetActive(false);
+        gameManager.EnemyKilled(points);
     }
 }
