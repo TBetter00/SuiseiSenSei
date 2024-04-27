@@ -4,24 +4,30 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SceneTransition : MonoBehaviour
+public class cutScenceFadeing : MonoBehaviour
 {
     public Image fadePanel;
     public float fadeDuration = 1f;
     private float timer;
     private bool isFading = false;
 
-    public void StartFadeTransition(int sceneIndex)
+    private void Start()
+    {
+        StartFadeTransition();
+    }
+
+    public void StartFadeTransition()
     {
         if (!isFading)
         {
-            fadePanel.gameObject.SetActive(true);
-            StartCoroutine(FadeTransition(sceneIndex));
+            StartCoroutine(FadeTransition());
         }
     }
 
-    IEnumerator FadeTransition(int sceneIndex)
+    IEnumerator FadeTransition()
     {
+        yield return new WaitForSeconds(10);
+        fadePanel.gameObject.SetActive(true);
         isFading = true;
         float startTime = Time.time;
         Color startColor = fadePanel.color;
@@ -34,7 +40,7 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(3);
 
         while (fadePanel.color.a > 0)
         {
