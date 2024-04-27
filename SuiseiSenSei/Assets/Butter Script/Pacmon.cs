@@ -233,7 +233,7 @@ public class Pacmon : MonoBehaviour
             blinking2to3 = true;
             AlreadyBlink3rd = true;
         }
-        else if (!blinking3to4 && GameManager.score >= 500 && !AlreadyBlink4th)
+        else if (!blinking3to4 && GameManager.score >= 50000000 && !AlreadyBlink4th)
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
