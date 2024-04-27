@@ -33642,6 +33642,7 @@ MonoBehaviour:
   pellet: []
   PowerUpnum: 1
   pacmon: {fileID: 800160751296053544}
+  randomIndex: 0
 --- !u!114 &1789038671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33657,6 +33658,7 @@ MonoBehaviour:
   pellet: []
   PowerUp2num: 1
   pacmon: {fileID: 800160751296053544}
+  pelletRoller: {fileID: 1789038670}
 --- !u!4 &1795000941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8896585949985338690, guid: f19465fe690cd39479ff7fac260ffb40,
@@ -40841,7 +40843,7 @@ MonoBehaviour:
   AlreadyBlink3rd: 0
   AlreadyBlink4th: 0
   AlreadyBlink5th: 0
-  cooldown: 0
+  cooldown: 20
   palette: []
 --- !u!222 &874998718096138254
 CanvasRenderer:

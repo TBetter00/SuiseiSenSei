@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         CheckMon1();
         CheckMon2();
         StartCoroutine(SpawnMonRepeatly());
-        //StartCoroutine(SpawnBigMonRepeatly());
+        StartCoroutine(SpawnBigMonRepeatly());
 
 
         

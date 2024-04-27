@@ -7,6 +7,7 @@ public class PelletRoller : MonoBehaviour
     public Palette[] pellet;
     public int PowerUpnum;
     public Pacmon pacmon;
+    public int randomIndex;
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class PelletRoller : MonoBehaviour
         // Shuffle the array using Fisher-Yates shuffle algorithm
         for (int i = pellet.Length - 1; i > 0; i--)
         {
-            int randomIndex = Random.Range(0, i + 1);
+            randomIndex = Random.Range(0, i + 1);
             Palette temp = pellet[i];
             pellet[i] = pellet[randomIndex];
             pellet[randomIndex] = temp;

@@ -7,6 +7,7 @@ public class PelletRoller2 : MonoBehaviour
     public Palette[] pellet;
     public int PowerUp2num;
     public Pacmon pacmon;
+    public PelletRoller pelletRoller;
 
     private bool needsShuffle = true; // Flag to indicate whether shuffling is needed
 
@@ -23,7 +24,7 @@ public class PelletRoller2 : MonoBehaviour
         }
         if (needsShuffle)
         {
-            if (!FindAnyPowerUp2() && pacmon.stage3)
+            if (pacmon.stage3)
             {
                 Shuffle();
                 needsShuffle = false; // Set the flag to false after shuffling
@@ -38,7 +39,7 @@ public class PelletRoller2 : MonoBehaviour
             int randomIndex = Random.Range(0, i + 1);
 
             // Find a random index that doesn't have PowerUp1
-            while (pellet[randomIndex].isPowerUp1)
+            while (randomIndex == pelletRoller.randomIndex)
             {
                 randomIndex = Random.Range(0, i + 1);
             }

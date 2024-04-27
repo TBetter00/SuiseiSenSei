@@ -307,7 +307,11 @@ public class Pacmon : MonoBehaviour
         {
             palette[i].Powerup2Eaten = false;
         }
-        isBlinking4to3 = true;
+        if(!blinking4to3 && !AlreadyBlink5th)
+        {
+            blinking4to3 = true;
+            AlreadyBlink5th = true;
+        }
         AlreadyBlink5th = false;
         AlreadyBlink4th = false;
     }
