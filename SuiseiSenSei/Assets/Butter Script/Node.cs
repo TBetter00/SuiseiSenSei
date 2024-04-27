@@ -1,5 +1,3 @@
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,14 +37,10 @@ public class Node : MonoBehaviour
         // Debug ray visualization
         Debug.DrawRay(center, direction * 1.5f, Color.red, 0.1f);
 
-
-        
         if (hit.collider == null)
         {
             this.availableDirections.Add(direction);
         }
-
-
     }
 }
 
