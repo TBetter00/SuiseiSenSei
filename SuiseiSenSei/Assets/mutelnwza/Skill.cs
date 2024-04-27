@@ -8,6 +8,7 @@ public class Skill : MonoBehaviour
     private Pacmon pacmon;
     public GameObject pacmonpos { get; private set; }
     public PowerCheck powerCheck;
+    public bool IsAttacking {   get; private set; }
     
 
     public virtual void Awake()
@@ -22,9 +23,11 @@ public class Skill : MonoBehaviour
     public virtual void SkillEnable()
     {
         powerCheck.RemovePower();
+        IsAttacking = true;
     }
 
     public virtual void SkillDisable()
     {
+        IsAttacking = false;
     }
 }

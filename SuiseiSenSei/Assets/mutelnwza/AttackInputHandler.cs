@@ -49,7 +49,12 @@ public class AttackInputHandler : MonoBehaviour
             firespread.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack == 3 || StateToAttack==4 && powerCheck.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack == 3 && powerCheck.Power>=1)
+        {
+            longfire.SkillEnable();
+        }
+
+        else if (Input.GetKeyDown("space") && StateToAttack == 4 && powerCheck.Power>=1)
         {
             longfire.SkillEnable();
         }
