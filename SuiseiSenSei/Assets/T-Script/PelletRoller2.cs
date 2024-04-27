@@ -8,6 +8,8 @@ public class PelletRoller2 : MonoBehaviour
     public int PowerUp2num;
     public Pacmon pacmon;
 
+    private bool needsShuffle = true; // Flag to indicate whether shuffling is needed
+
     private void Start()
     {
         pellet = FindObjectsOfType<Palette>();
@@ -15,23 +17,32 @@ public class PelletRoller2 : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("FindAnyPowerUp :" + FindAnyPowerUp());
-        if (!FindAnyPowerUp())
+        if (!FindAnyPowerUp2())
         {
-            //Debug.Log("Shuffling");
-            if (!pacmon.stageEgg)
+            needsShuffle = true;
+        }
+        if (needsShuffle)
+        {
+            if (!FindAnyPowerUp2() && pacmon.stage3)
             {
                 Shuffle();
+                needsShuffle = false; // Set the flag to false after shuffling
             }
         }
     }
 
-    public void Shuffle()
+    private void Shuffle()
     {
-        // Shuffle the array using Fisher-Yates shuffle algorithm
         for (int i = pellet.Length - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i + 1);
+
+            // Find a random index that doesn't have PowerUp1
+            while (pellet[randomIndex].isPowerUp1)
+            {
+                randomIndex = Random.Range(0, i + 1);
+            }
+
             Palette temp = pellet[i];
             pellet[i] = pellet[randomIndex];
             pellet[randomIndex] = temp;
@@ -46,11 +57,11 @@ public class PelletRoller2 : MonoBehaviour
         Debug.Log("Shuffling complete");
     }
 
-    public bool FindAnyPowerUp()
+    private bool FindAnyPowerUp2()
     {
-        for (int i = 0; i < pellet.Length; i++)
+        foreach (Palette p in pellet)
         {
-            if (pellet[i].IsPowerUp2 && !pellet[i].isEaten)
+            if (p.IsPowerUp2 && !p.isEaten)
             {
                 return true;
             }
