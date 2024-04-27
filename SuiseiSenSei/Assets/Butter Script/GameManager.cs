@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         CheckMon1();
         CheckMon2();
         StartCoroutine(SpawnMonRepeatly());
+        StartCoroutine(SpawnBigMonRepeatly());
 
 
         
@@ -175,7 +176,7 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnMonRepeatly()
     {
         
-        if ((pacmon.stage2 || pacmon.stage3) && !hasSpawnedRepeat)
+        if ((pacmon.stage2) && !hasSpawnedRepeat)
         {
             hasSpawnedRepeat = true;
             Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
@@ -184,6 +185,14 @@ public class GameManager : MonoBehaviour
 
         }
         
+    }
+
+    IEnumerator SpawnBigMonRepeatly()
+    {
+            hasSpawned3 = true;
+            Instantiate(bigEnemyenemy, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(10);
+            hasSpawnedRepeat = false;
     }
 
 
