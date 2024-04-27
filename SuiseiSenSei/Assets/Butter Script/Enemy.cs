@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public EnemyScatter scatter { get; private set; }
     public EnemyFrightened frightened { get; private set; }
     public EnemyChase chase { get; private set; }
+    public Pacmon pacmon { get; private set; }
     public EnemyBehavior initialBehavior;
     public Transform target;
 
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
         this.scatter = GetComponent<EnemyScatter>();
         this.chase = GetComponent<EnemyChase>();
         this.frightened = GetComponent<EnemyFrightened>();
+        pacmon = FindObjectOfType<Pacmon>();
 
     }
 
@@ -54,9 +56,13 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()!=4)
         {
             FindObjectOfType<GameManager>().PacmonKilled();
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()==4)
+        {
+            Die();
         }
     }
 
