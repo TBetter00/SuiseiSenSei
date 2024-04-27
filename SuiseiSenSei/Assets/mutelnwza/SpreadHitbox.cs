@@ -22,9 +22,9 @@ public class SpreadHitbox : MonoBehaviour{
         if (pacmon.stageMega){finaldmg=dmg*dmgmultiplier;}
         else{finaldmg=dmg;}
 
-        if(collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)"){enemy.Die();}
+        if((collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)")&&gameObject.activeSelf){enemy.Die();}
 
-        else if(collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)"){
+        else if((collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)")&&gameObject.activeSelf){
             dealingdmg = true;
             StartCoroutine(Attacking());}
     }
