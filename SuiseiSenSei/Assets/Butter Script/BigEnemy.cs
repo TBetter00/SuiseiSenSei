@@ -40,7 +40,7 @@ public class BigEnemy : MonoBehaviour
     private void Die()
     {
         // Implement death logic here
-        gameObject.SetActive(false); // Disable the big enemy when it dies
+        Destroy(gameObject); // Disable the big enemy when it dies
     }
 
 
