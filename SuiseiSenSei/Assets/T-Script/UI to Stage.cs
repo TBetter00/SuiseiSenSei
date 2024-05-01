@@ -62,6 +62,7 @@ public class UItoStage : MonoBehaviour
             case 3:
                 Third.SetActive(true);
                 Second.SetActive(false);
+                fourth.SetActive(false);
                 break;
             case 4:
                 fourth.SetActive(true);

@@ -40664,6 +40664,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3528703118324269057}
   GameManager: {fileID: 1582214360}
+  EggtoFirst: 700
+  FirsttoSecond: 1800
+  SecondtoThird: 4000
+  ThirdtoFourth: 50000
   stageEgg: 1
   stage1: 0
   stage2: 0
@@ -42412,6 +42416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Power: 0
+  timetillremove: 5
+  timecount: 0
 --- !u!222 &5163275678256269336
 CanvasRenderer:
   m_ObjectHideFlags: 0

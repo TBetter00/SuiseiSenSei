@@ -10,8 +10,11 @@ public class Pacmon : MonoBehaviour
     public Movement movement { get; private set; }
     public Animator animator;
     public GameManager GameManager;
-    
 
+    public float EggtoFirst;//700
+    public float FirsttoSecond;//1800
+    public float SecondtoThird;//4000
+    public float ThirdtoFourth;//50000
     public bool stageEgg;
     public bool stage1;
     public bool stage2;
@@ -217,23 +220,23 @@ public class Pacmon : MonoBehaviour
     }
     public void ChangeStageWithScore()
     {
-        if (!blinkingeggto1 && GameManager.score >= 700 && !AlreadyBlink1st)
+        if (!blinkingeggto1 && GameManager.score >= EggtoFirst && !AlreadyBlink1st)
         {
             blinkingeggto1 = true;
             AlreadyBlink1st = true;
 
         }
-        else if (!blinking1to2 && GameManager.score >= 1800 && !AlreadyBlink2nd)
+        else if (!blinking1to2 && GameManager.score >= FirsttoSecond && !AlreadyBlink2nd)
         {
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >=4000 && !AlreadyBlink3rd)
+        else if (!blinking2to3 && GameManager.score >=SecondtoThird && !AlreadyBlink3rd)
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
         }
-        else if (!blinking3to4 && GameManager.score >= 50000000 && !AlreadyBlink4th)
+        else if (!blinking3to4 && GameManager.score >= ThirdtoFourth && !AlreadyBlink4th)
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
