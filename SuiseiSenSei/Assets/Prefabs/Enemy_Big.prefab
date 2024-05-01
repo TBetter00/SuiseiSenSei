@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  animator: {fileID: 8724153128512806923}
 --- !u!114 &5913803757344235729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   initialBehavior: {fileID: 5719636679857312663}
   target: {fileID: 0}
   gameManager: {fileID: 0}
+  powerCheck: {fileID: 0}
   points: 400
 --- !u!95 &8724153128512806923
 Animator:

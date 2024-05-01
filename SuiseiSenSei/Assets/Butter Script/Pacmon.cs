@@ -43,6 +43,7 @@ public class Pacmon : MonoBehaviour
     public bool AlreadyBlink5th;
     public int cooldown;
 
+
     public Palette[] palette;
 
     private void Awake()
@@ -59,6 +60,7 @@ public class Pacmon : MonoBehaviour
     {
         CheckUpdate();
         ChangeStageWithScore();
+
         
         if (blinkingeggto1)
         {

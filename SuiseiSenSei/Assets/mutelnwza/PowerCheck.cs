@@ -4,10 +4,12 @@ public class PowerCheck:MonoBehaviour{
     public bool Power;
     public float timetillremove;
     [SerializeField]private float timecount;
+    public GameObject skillUI;
 
     public void Start(){
         Power = false;
         timecount = timetillremove;
+        
     }
     public void Update()
     {
@@ -19,9 +21,11 @@ public class PowerCheck:MonoBehaviour{
                 RemovePower();
                 timecount = timetillremove; 
             }
+            skillUI.SetActive(true);
         }else if (!Power)
         {
             timecount = timetillremove;
+            skillUI.SetActive(false);
         }
         
     }

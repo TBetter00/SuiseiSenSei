@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class EnemyFrightened : EnemyBehavior
 {
+
+    private Animator animator; // Reference to the Animator component
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void OnDisable()
+    {
+        //this.enemy.scatter.Enable();
+    }
+
+    private void OnEnable()
+    {
+        this.enemy.scatter.Disable();
+        this.enemy.chase.Disable();
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
@@ -27,6 +47,28 @@ public class EnemyFrightened : EnemyBehavior
             }
 
             this.enemy.movement.SetDirection(direction);
+
+
+            // Trigger animation based on movement direction
+            if (direction == Vector2.up)
+            {
+                animator.Play("blinky up");
+            }
+            else if (direction == Vector2.down)
+            {
+                animator.Play("blinky down");
+            }
+            else if (direction == Vector2.left)
+            {
+                animator.Play("blinky left");
+            }
+            else if (direction == Vector2.right)
+            {
+                animator.Play("blinky right");
+            }
         }
+
+
+        
     }
 }

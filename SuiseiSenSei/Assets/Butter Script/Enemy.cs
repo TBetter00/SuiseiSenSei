@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public EnemyBehavior initialBehavior;
     public Transform target;
     public GameManager gameManager;
+    public PowerCheck powerCheck;
 
 
     public int points = 200;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         this.frightened = GetComponent<EnemyFrightened>();
         pacmon = FindObjectOfType<Pacmon>();
         gameManager = FindObjectOfType<GameManager>();
+        powerCheck = FindObjectOfType<PowerCheck>();
 
     }
 
@@ -34,6 +36,15 @@ public class Enemy : MonoBehaviour
     {
         ResetState();
         target = GameObject.Find("Pukkermon").transform;
+    }
+
+    private void Update()
+    {
+        if(powerCheck.Power)
+        {
+            //this.frightened.Enable();
+            Debug.Log("fright");
+        }
     }
 
     public virtual void ResetState()
