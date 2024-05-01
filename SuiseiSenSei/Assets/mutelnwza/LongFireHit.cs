@@ -17,8 +17,7 @@ public class LongfireHit : MonoBehaviour{
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.CompareTag("block"))
-        {Destroy(gameObject);}
+    private void OnCollisionEnter2D(Collision2D other) {
+        Destroy(gameObject);
     }
 }
