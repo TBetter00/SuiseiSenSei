@@ -30628,9 +30628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3528703118324269057}
   GameManager: {fileID: 1582214360}
-  EggtoFirst: 700
-  FirsttoSecond: 1800
-  SecondtoThird: 4000
+  EggtoFirst: 200
+  FirsttoSecond: 300
+  SecondtoThird: 400
   ThirdtoFourth: 50000
   stageEgg: 1
   stage1: 0
