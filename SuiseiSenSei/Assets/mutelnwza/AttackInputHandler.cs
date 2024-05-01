@@ -41,22 +41,22 @@ public class AttackInputHandler : MonoBehaviour
 
     public void GetAttackInput()
     {
-        if (Input.GetKeyDown("space") && StateToAttack==1 && powerCheck.Power>=1)
+        if (Input.GetKeyDown("space") && StateToAttack==1 && powerCheck.Power)
         {
             fireball.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack==2 && powerCheck.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack==2 && powerCheck.Power)
         {
             newFire.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack == 3 && powerCheck.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack == 3 && powerCheck.Power)
         {
             longfire.SkillEnable();
         }
 
-        else if (Input.GetKeyDown("space") && StateToAttack == 4 && powerCheck.Power>=1)
+        else if (Input.GetKeyDown("space") && StateToAttack == 4 && powerCheck.Power)
         {
             longfire.SkillEnable();
         }
