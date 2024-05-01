@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b1cfcd14e702e24cb17650eb7f6cd27
+guid: d22f2798e9dd1c7449521bf47eaf2a82
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: powerup_0
+      name: mega_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 13
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3aeff0935ebf2d40a3d4ff0b3a03e42
-      internalID: 2132002284
+      spriteID: fdbfa5fefb9b716469ff99656f8c9a16
+      internalID: 944689428
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      powerup_0: 2132002284
+      mega_0: 944689428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
