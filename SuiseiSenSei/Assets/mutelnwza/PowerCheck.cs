@@ -3,7 +3,7 @@ using UnityEngine;
 public class PowerCheck:MonoBehaviour{
     public bool Power;
     public float timetillremove;
-    private float timecount;
+    [SerializeField]private float timecount;
 
     public void Start(){
         Power = false;
@@ -11,12 +11,19 @@ public class PowerCheck:MonoBehaviour{
     }
     public void Update()
     {
-        timecount -= Time.deltaTime;
-        if(Power = true && timecount >= 0)
+        if (Power)
         {
-            RemovePower();
-            timecount = timetillremove; 
+            timecount -= Time.deltaTime;
+            if(timecount <= 0)
+            {
+                RemovePower();
+                timecount = timetillremove; 
+            }
+        }else if (!Power)
+        {
+            timecount = timetillremove;
         }
+        
     }
 
     public void AddPower(){
