@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 8896585949985338690}
   - component: {fileID: 5141474667109704500}
   - component: {fileID: 6627097029214646946}
+  - component: {fileID: 8021319769290661430}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -429,6 +430,28 @@ MonoBehaviour:
   PowerUp2: {fileID: 7502049586655411516}
   IsPowerUp2: 0
   Powerup2Eaten: 0
+  animator: {fileID: 8021319769290661430}
+--- !u!95 &8021319769290661430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333100756393522914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 537693ef1d723834483f8808f1f1a270, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7502049586655411516
 GameObject:
   m_ObjectHideFlags: 0

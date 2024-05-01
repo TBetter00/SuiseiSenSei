@@ -18,6 +18,7 @@ public class Palette : MonoBehaviour
     public GameObject PowerUp2;
     public bool IsPowerUp2;
     public bool Powerup2Eaten = false;
+    [SerializeField]private Animator animator;
 
     private void Awake(){
         powerCheck = FindObjectOfType<PowerCheck>();
@@ -33,7 +34,9 @@ public class Palette : MonoBehaviour
         {
             isEaten = true;
             powerCheck.AddPower();
-        }else if(collision.gameObject.CompareTag("pacmon") && IsPowerUp2 && !isEaten)
+            animator.Play("boom");
+        }
+        else if(collision.gameObject.CompareTag("pacmon") && IsPowerUp2 && !isEaten)
         {
             isEaten = true;
             Powerup2Eaten = true;
