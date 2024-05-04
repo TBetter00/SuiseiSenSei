@@ -71,7 +71,9 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()!=4)
         {
-            FindObjectOfType<GameManager>().PacmonKilled();
+            if(gameManager.Vulnerable){
+                FindObjectOfType<GameManager>().PacmonKilled();
+            }
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()==4)
         {

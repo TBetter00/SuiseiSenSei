@@ -42,6 +42,8 @@ public class Pacmon : MonoBehaviour
     public bool AlreadyBlink4th;
     public bool AlreadyBlink5th;
     public int cooldown;
+    public float Safetime;
+    public bool Vulnerable;
 
 
     public Palette[] palette;
@@ -52,7 +54,8 @@ public class Pacmon : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Start(){
+    private void Start()
+    {
         palette = FindObjectsOfType<Palette>();
     }
 
@@ -61,7 +64,7 @@ public class Pacmon : MonoBehaviour
         CheckUpdate();
         ChangeStageWithScore();
 
-        
+
         if (blinkingeggto1)
         {
             isBlinkingeggto1 = true;
@@ -98,7 +101,7 @@ public class Pacmon : MonoBehaviour
             //AlreadyBlink5th = false;
         }
         // Debug.Log("Stage :" + GetCurrentStage());
-        
+
     }
 
     private void CheckUpdate()
@@ -148,32 +151,32 @@ public class Pacmon : MonoBehaviour
             resetallWalk();
             walkingUp = true;
             this.movement.SetDirection(Vector2.up);
-            if (movement.Occupied(Vector2.up)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_upwalk");}
+            if (movement.Occupied(Vector2.up)) { }
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_upwalk"); }
         }
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             resetallWalk();
             walkingDown = true;
             this.movement.SetDirection(Vector2.down);
-            if (movement.Occupied(Vector2.down)){}
-            else if(!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) {animator.Play(stage + "_downwalk");}
+            if (movement.Occupied(Vector2.down)) { }
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_downwalk"); }
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             resetallWalk();
             walkingLeft = true;
             this.movement.SetDirection(Vector2.left);
-            if (movement.Occupied(Vector2.left)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_leftwalk");}
+            if (movement.Occupied(Vector2.left)) { }
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_leftwalk"); }
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             resetallWalk();
             walkingRight = true;
             this.movement.SetDirection(Vector2.right);
-            if (movement.Occupied(Vector2.right)){}
-            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_rightwalk");}
+            if (movement.Occupied(Vector2.right)) { }
+            else if (!isBlinkingeggto1 && !isBlinking1to2 && !isBlinking2to3 && !isBlinking3to4 && !isBlinking4to3) { animator.Play(stage + "_rightwalk"); }
         }
 
         if (walkingUp)
@@ -233,7 +236,7 @@ public class Pacmon : MonoBehaviour
             blinking1to2 = true;
             AlreadyBlink2nd = true;
         }
-        else if (!blinking2to3 && GameManager.score >=SecondtoThird && !AlreadyBlink3rd)
+        else if (!blinking2to3 && GameManager.score >= SecondtoThird && !AlreadyBlink3rd)
         {
             blinking2to3 = true;
             AlreadyBlink3rd = true;
@@ -242,7 +245,8 @@ public class Pacmon : MonoBehaviour
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
-        }else if(!blinking3to4 && CheckPacmonMega() && !AlreadyBlink4th)
+        }
+        else if (!blinking3to4 && CheckPacmonMega() && !AlreadyBlink4th)
         {
             blinking3to4 = true;
             AlreadyBlink4th = true;
@@ -252,7 +256,7 @@ public class Pacmon : MonoBehaviour
 
     public bool CheckPacmonMega()
     {
-        for (int i = 0;i< palette.Length; i++)
+        for (int i = 0; i < palette.Length; i++)
         {
             if (palette[i].Powerup2Eaten)
             {
@@ -312,12 +316,18 @@ public class Pacmon : MonoBehaviour
         {
             palette[i].Powerup2Eaten = false;
         }
-        if(!blinking4to3 && !AlreadyBlink5th)
+        if (!blinking4to3 && !AlreadyBlink5th)
         {
             blinking4to3 = true;
             AlreadyBlink5th = true;
         }
         AlreadyBlink5th = false;
         AlreadyBlink4th = false;
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(Safetime);
+        Vulnerable = false;
     }
 }
