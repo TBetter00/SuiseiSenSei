@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     public int initialEnemyCount = 1;
     public float Safetime;
-    public bool Vulnerable;
+    public bool Vulnerable = true;
 
 
 
