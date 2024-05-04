@@ -19,7 +19,7 @@ public class PowerCheck:MonoBehaviour{
             if(timecount <= 0)
             {
                 RemovePower();
-                timecount = timetillremove; 
+                timecount = timetillremove;
             }
             skillUI.SetActive(true);
         }else if (!Power)
@@ -32,6 +32,7 @@ public class PowerCheck:MonoBehaviour{
 
     public void AddPower(){
         Power= true;
+        timecount = timetillremove;
     }
 
     public void RemovePower(){
