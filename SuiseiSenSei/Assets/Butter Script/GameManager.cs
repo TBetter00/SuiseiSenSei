@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         } else{
             GameOver();
         }
-        CoolDown();
+        StartCoroutine(CoolDown());
     }
 
     public void PelletEat(int score)
