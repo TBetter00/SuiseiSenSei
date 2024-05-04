@@ -12,7 +12,6 @@ public class Fireball : Skill{
     {
         base.SkillEnable();
         Cast();
-
     }
 
     private void Cast()

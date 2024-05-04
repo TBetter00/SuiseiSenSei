@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
     public Palette[] pellet;
     private List<GameObject> enemies = new List<GameObject>();
     public int initialEnemyCount = 1;
-    
-    
+    public float Safetime;
+    public bool Vulnerable;
+
+
 
     //public PelletManager pellet;
     //public Transform pellets;
@@ -105,6 +107,7 @@ public class GameManager : MonoBehaviour
         this.pacmon.ResetState();
         this.pacmon.GetComponent<SpriteRenderer>().enabled = true;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = true;
+        CoolDown();
     }
 
     private void SetScore(int score)
@@ -130,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void PacmonKilled()
     {
+        Vulnerable = false;
         this.pacmon.GetComponent<SpriteRenderer>().enabled = false;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = false;
         SetLives(this.lives - 1);
@@ -230,12 +234,11 @@ public class GameManager : MonoBehaviour
             hasSpawnedMega = false;
         }
     }
-
-
-    
-
-
-
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(Safetime);
+        Vulnerable = true;
+    }
 
 
 
