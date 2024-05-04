@@ -5,6 +5,7 @@ public class Skill : MonoBehaviour
 {
     public Rigidbody2D rb { get; private set; }
     public AttackInputHandler atk{ get; private set; }
+    public bool onActive { get; protected set; }
     private Pacmon pacmon;
     public GameObject pacmonpos { get; private set; }
     public PowerCheck powerCheck;
@@ -20,14 +21,22 @@ public class Skill : MonoBehaviour
         powerCheck = FindObjectOfType<PowerCheck>();
     }
 
+    public virtual void Update()
+    {
+        if (pacmon.GetComponent<SpriteRenderer>().enabled==false)
+        {
+            SkillDisable();
+        }
+    }
+
     public virtual void SkillEnable()
     {
+        onActive=true;
         powerCheck.RemovePower();
-        IsAttacking = true;
     }
 
     public virtual void SkillDisable()
     {
-        IsAttacking = false;
+        onActive=false;
     }
 }

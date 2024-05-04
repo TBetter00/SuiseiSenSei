@@ -16,7 +16,7 @@ public class FireSpread : Skill{
         fireobject.SetActive(false);
     }
 
-    public void Update()
+    public override void Update()
     {
         if(!canfire){fireobject.SetActive(false);}
         else if(canfire){
