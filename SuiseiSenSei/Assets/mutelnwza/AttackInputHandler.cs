@@ -1,10 +1,10 @@
 using Unity.Entities.UniversalDelegates;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AttackInputHandler : MonoBehaviour
 {
     private Fireball fireball;
-    private FireSpread firespread;
     private Longfire longfire;
     private NewFire newFire;
     private Pacmon pacmon;
@@ -26,10 +26,10 @@ public class AttackInputHandler : MonoBehaviour
     {
         pacmon = GetComponent<Pacmon>();
         fireball = GetComponentInChildren<Fireball>();
-        firespread = GetComponentInChildren<FireSpread>();
         longfire = GetComponentInChildren<Longfire>();
         powerCheck = GetComponent<PowerCheck>();
         newFire = GetComponentInChildren<NewFire>();
+        
     }
 
     private void Update()
@@ -53,12 +53,16 @@ public class AttackInputHandler : MonoBehaviour
 
         else if (Input.GetKeyDown("space") && StateToAttack == 3 && powerCheck.Power)
         {
-            longfire.SkillEnable();
+            GameObject skill3 = GameObject.Find("skill3");
+            Fireball bigfire = skill3.GetComponent<Fireball>();
+            bigfire.SkillEnable();
         }
 
         else if (Input.GetKeyDown("space") && StateToAttack == 4 && powerCheck.Power)
         {
-            longfire.SkillEnable();
+            GameObject skill4 = GameObject.Find("skill4");
+            Fireball bigblue = skill4.GetComponent<Fireball>();
+            bigblue.SkillEnable();
         }
     }
 
