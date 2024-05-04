@@ -35,7 +35,7 @@ public class Palette : MonoBehaviour
         {
             isEaten = true;
             powerCheck.AddPower();
-            animator.Play("boom");
+            animator.Play("firewook anim");
         }
         else if(collision.gameObject.CompareTag("pacmon") && IsPowerUp2 && !isEaten)
         {
