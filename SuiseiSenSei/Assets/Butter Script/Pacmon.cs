@@ -42,8 +42,7 @@ public class Pacmon : MonoBehaviour
     public bool AlreadyBlink4th;
     public bool AlreadyBlink5th;
     public int cooldown;
-    public float Safetime;
-    public bool Vulnerable;
+    
 
 
     public Palette[] palette;
@@ -323,11 +322,5 @@ public class Pacmon : MonoBehaviour
         }
         AlreadyBlink5th = false;
         AlreadyBlink4th = false;
-    }
-
-    IEnumerator CoolDown()
-    {
-        yield return new WaitForSeconds(Safetime);
-        Vulnerable = false;
     }
 }

@@ -107,7 +107,6 @@ public class GameManager : MonoBehaviour
         this.pacmon.ResetState();
         this.pacmon.GetComponent<SpriteRenderer>().enabled = true;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = true;
-        CoolDown();
     }
 
     private void SetScore(int score)
@@ -143,6 +142,7 @@ public class GameManager : MonoBehaviour
         } else{
             GameOver();
         }
+        CoolDown();
     }
 
     public void PelletEat(int score)
