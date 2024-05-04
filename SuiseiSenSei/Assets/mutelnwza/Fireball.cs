@@ -8,17 +8,10 @@ public class Fireball : Skill{
     public RigidbodyConstraints2D constraints;
     [SerializeField] private GameObject fireball;
 
-    public override void Update()
-    {
-        base.Update();
-        if(onActive){Cast();}
-    }
-
     public override void SkillEnable()
     {
         base.SkillEnable();
-
-
+        Cast();
     }
 
     private void Cast()

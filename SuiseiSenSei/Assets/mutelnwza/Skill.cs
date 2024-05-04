@@ -23,20 +23,15 @@ public class Skill : MonoBehaviour
 
     public virtual void Update()
     {
-        if (pacmon.GetComponent<SpriteRenderer>().enabled==false)
-        {
-            SkillDisable();
-        }
+
     }
 
     public virtual void SkillEnable()
     {
-        onActive=true;
         powerCheck.RemovePower();
     }
 
     public virtual void SkillDisable()
     {
-        onActive=false;
     }
 }

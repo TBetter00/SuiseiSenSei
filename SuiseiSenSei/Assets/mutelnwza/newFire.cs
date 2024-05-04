@@ -20,6 +20,7 @@ public class NewFire : Skill{
     public override void SkillEnable()
     {
         base.SkillEnable();
+        onActive = true;
         // Debug.Log("OnActive :" + onActive);
         StartCoroutine(ActiveDuration());
     }
