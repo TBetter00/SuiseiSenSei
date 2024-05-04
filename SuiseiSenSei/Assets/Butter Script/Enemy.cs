@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     {
         if(powerCheck.Power)
         {
-            //this.frightened.Enable();
+            this.frightened.Enable();
             Debug.Log("fright");
         }
     }
