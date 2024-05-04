@@ -314,6 +314,7 @@ public class Pacmon : MonoBehaviour
         for (int i = 0; i < palette.Length; i++)
         {
             palette[i].Powerup2Eaten = false;
+            palette[i].IsPowerUp2 = false;
         }
         if (!blinking4to3 && !AlreadyBlink5th)
         {
