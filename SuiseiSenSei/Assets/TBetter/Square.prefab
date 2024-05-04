@@ -766,6 +766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1_magicspell
       objectReference: {fileID: 0}
+    - target: {fileID: 3572216837747417495, guid: 6159de9dbc4470a46816a4eeee0a9238,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8536472976237922592, guid: 6159de9dbc4470a46816a4eeee0a9238,
         type: 3}
       propertyPath: m_LocalPosition.x
