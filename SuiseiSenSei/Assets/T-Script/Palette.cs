@@ -22,6 +22,7 @@ public class Palette : MonoBehaviour
 
     private void Awake(){
         powerCheck = FindObjectOfType<PowerCheck>();
+        GameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
