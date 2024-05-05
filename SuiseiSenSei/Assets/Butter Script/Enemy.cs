@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public EnemyFrightened frightened { get; private set; }
     public EnemyChase chase { get; private set; }
     public Pacmon pacmon { get; private set; }
+    public GameObject Particleprefab;
+    public Transform ParticlePos;
     public EnemyBehavior initialBehavior;
     public Transform target;
     public GameManager gameManager;
@@ -77,6 +79,8 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()==4)
         {
+            Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
+            Debug.Log("instantiated");
             Die();
         }
     }

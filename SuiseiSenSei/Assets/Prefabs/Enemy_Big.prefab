@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2078276579997663904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3827629512888744352}
+  m_Layer: 7
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3827629512888744352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078276579997663904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4610059654607726252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3163885172587481606
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,7 +51,6 @@ GameObject:
   - component: {fileID: 5913803757344235729}
   - component: {fileID: 8013083683508181683}
   - component: {fileID: 8724153128512806923}
-  - component: {fileID: 1254665879637645475}
   m_Layer: 7
   m_Name: Enemy_Big
   m_TagString: enemy
@@ -42,6 +72,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722306835169541589}
+  - {fileID: 3827629512888744352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4775527690420978837
@@ -256,6 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68c16e3a66f7984b9755b8298ea6639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Particleprefab: {fileID: 271968700861383254, guid: 0c6a8afee9760c64fb95eb24924a7e1e,
+    type: 3}
+  ParticlePos: {fileID: 3827629512888744352}
   initialBehavior: {fileID: 5719636679857312663}
   target: {fileID: 0}
   gameManager: {fileID: 0}
@@ -282,21 +316,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1254665879637645475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163885172587481606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 066818134cbce4249a859831c8bf784f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 2691817533110583499}
-  pacmon: {fileID: 0}
-  addspeed: 2
 --- !u!1 &4303609506407036622
 GameObject:
   m_ObjectHideFlags: 0
