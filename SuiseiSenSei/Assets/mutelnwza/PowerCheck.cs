@@ -16,13 +16,14 @@ public class PowerCheck:MonoBehaviour{
     {
         if (Power)
         {
+            skillUI.SetActive(true);
             timecount -= Time.deltaTime;
             if(timecount <= 0)
             {
                 RemovePower();
                 timecount = timetillremove;
             }
-            skillUI.SetActive(true);
+            
         }else if (!Power)
         {
             timecount = timetillremove;

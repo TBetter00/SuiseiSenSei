@@ -13,10 +13,13 @@ public class EnemyChase : EnemyBehavior
 
     private void OnDisable()
     {
-
-        this.enemy.scatter.Enable();
+        //if (!enemy.frightened)
+        {
+            this.enemy.scatter.Enable();
+        }
 
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D other)

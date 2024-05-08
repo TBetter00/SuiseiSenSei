@@ -11,13 +11,6 @@ public class EnemyFrightened : EnemyBehavior
         animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-        this.enemy.scatter.Disable();
-        this.enemy.chase.Disable();
-    }
-
-
     private void OnDisable()
     {
         this.enemy.scatter.Enable();

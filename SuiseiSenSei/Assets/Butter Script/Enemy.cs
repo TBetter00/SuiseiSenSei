@@ -47,8 +47,6 @@ public class Enemy : MonoBehaviour
         {
             isFright = true;
             this.frightened.Enable();
-            this.scatter.Disable();
-            this.chase.Disable();
             Debug.Log("fright");
         }
         else if(!powerCheck.Power)
