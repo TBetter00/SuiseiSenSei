@@ -79,14 +79,18 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()==4)
         {
-            Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
-            Debug.Log("instantiated");
             Die();
         }
     }
 
     public void Die(){
+        Instant();
         Destroy(gameObject);
         gameManager.EnemyKilled(points);
+    }
+    public void Instant()
+    {
+        Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
+        Debug.Log("Instanted");
     }
 }

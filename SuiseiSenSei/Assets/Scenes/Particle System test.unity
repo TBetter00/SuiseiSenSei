@@ -391,6 +391,12 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1753848323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 271968700861383254, guid: 0c6a8afee9760c64fb95eb24924a7e1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2256854292641991211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1785251818
 GameObject:
   m_ObjectHideFlags: 0
@@ -31912,6 +31918,51 @@ Transform:
   - {fileID: 1785251819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2063250618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063250620}
+  - component: {fileID: 2063250619}
+  m_Layer: 0
+  m_Name: Gamemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2063250619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063250618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471661ea7e740d844a21c61d0053e6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testParticle: {fileID: 1753848323}
+--- !u!4 &2063250620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063250618}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2256854292641991211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31975,6 +32026,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8505001902198990351, guid: 0c6a8afee9760c64fb95eb24924a7e1e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31989,3 +32045,4 @@ SceneRoots:
   - {fileID: 637666497}
   - {fileID: 1969203564}
   - {fileID: 1054426013}
+  - {fileID: 2063250620}
