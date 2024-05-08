@@ -13,10 +13,9 @@ public class EnemyChase : EnemyBehavior
 
     private void OnDisable()
     {
-        if (!this.enemy.frightened.enabled)
-        {
-            this.enemy.scatter.Enable();
-        }
+
+        this.enemy.scatter.Enable();
+
     }
 
 
