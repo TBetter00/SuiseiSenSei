@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject bigEnemy;
     private GameObject currentEnemy;
     private GameObject currentBigEnemy;
+    public GameObject deadParticle;
     private bool hasSpawned1 = false;
     private bool hasSpawned2 = false;
     private bool isSpawningMonsters = false;
@@ -133,6 +134,7 @@ public class GameManager : MonoBehaviour
     public void PacmonKilled()
     {
         Vulnerable = false;
+        Instantiate(deadParticle, this.pacmon.gameObject.transform.position, Quaternion.identity);
         this.pacmon.GetComponent<SpriteRenderer>().enabled = false;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = false;
         SetLives(this.lives - 1);

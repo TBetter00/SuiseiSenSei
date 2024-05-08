@@ -19482,6 +19482,8 @@ MonoBehaviour:
   enemy: {fileID: 4771772059023595070, guid: 49bd88720458fd94982e7f905bf5b87e, type: 3}
   bigEnemy: {fileID: 3163885172587481606, guid: 43d8a52daf7042e44bb2b960c39cbf32,
     type: 3}
+  deadParticle: {fileID: 1807543924305260004, guid: a638ffea517a4f1478da0b4655e2fcbf,
+    type: 3}
   spawnAmountAfterDeath: 2
   pellet: []
   initialEnemyCount: 1
