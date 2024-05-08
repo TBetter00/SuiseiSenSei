@@ -5,6 +5,7 @@ public class PowerCheck:MonoBehaviour{
     public float timetillremove;
     [SerializeField]private float timecount;
     public GameObject skillUI;
+    private Enemy enemy;
 
     public void Start(){
         Power = false;

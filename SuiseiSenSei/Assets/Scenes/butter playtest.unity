@@ -12451,7 +12451,12 @@ PrefabInstance:
     - target: {fileID: 1631297553070575728, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
       propertyPath: duration
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631297553070575728, guid: 49bd88720458fd94982e7f905bf5b87e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2787982067713904559, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
@@ -29806,6 +29811,8 @@ MonoBehaviour:
   spawnAmountAfterDeath: 2
   pellet: []
   initialEnemyCount: 1
+  Safetime: 0
+  Vulnerable: 1
 --- !u!4 &1582214361
 Transform:
   m_ObjectHideFlags: 0

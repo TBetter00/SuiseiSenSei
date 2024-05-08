@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public GameManager gameManager;
     public PowerCheck powerCheck;
+    [HideInInspector] public bool isFright = false;
 
 
     public int points = 200;
@@ -42,10 +43,17 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(powerCheck.Power)
+        if(powerCheck.Power && !isFright)
         {
+            isFright = true;
             this.frightened.Enable();
+            this.scatter.Disable();
+            this.chase.Disable();
             Debug.Log("fright");
+        }
+        else if(!powerCheck.Power)
+        {
+            isFright = false;
         }
     }
 
