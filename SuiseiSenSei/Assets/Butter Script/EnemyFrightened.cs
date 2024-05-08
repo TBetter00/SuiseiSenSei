@@ -13,7 +13,7 @@ public class EnemyFrightened : EnemyBehavior
 
     private void OnDisable()
     {
-        this.enemy.scatter.Enable();
+        // this.enemy.scatter.Enable();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
