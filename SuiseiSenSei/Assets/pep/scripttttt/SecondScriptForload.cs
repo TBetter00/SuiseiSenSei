@@ -6,16 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class SecondScriptForload : MonoBehaviour
 {
-    public Button yourButton; // Assign in inspector
-    public string sceneToLoad; // Assign in inspector
+    public GameManager gameManager;
 
-    void Start()
+    private void Start()
     {
-        yourButton.onClick.AddListener(() => LoadScene(sceneToLoad));
+        /*gameManager = FindObjectOfType<GameManager>();*/
+
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found");
+        }
     }
 
-    void LoadScene(string sceneName)
+    public void UpdateLives(int newLives)
     {
-        SceneManager.LoadScene(sceneName);
+        if (gameManager != null)
+        {
+            gameManager.ChangeLives(newLives);
+        }
     }
 }

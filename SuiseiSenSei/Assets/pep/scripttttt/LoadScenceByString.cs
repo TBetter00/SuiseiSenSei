@@ -10,5 +10,6 @@ public class LoadScenceByString : MonoBehaviour
     public void ChangeScenceByName()
     {
         SceneManager.LoadScene(ScenceName);
+        Time.timeScale = 1;
     }
 }

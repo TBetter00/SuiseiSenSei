@@ -121,6 +121,11 @@ public class GameManager : MonoBehaviour
         this.pacmon.gameObject.SetActive(false);
     }
 
+    public void ChangeLives(int newLives)
+    {
+        SetLives(newLives);
+    }
+
     private void SetLives(int lives)
     {
         this.lives = lives;
