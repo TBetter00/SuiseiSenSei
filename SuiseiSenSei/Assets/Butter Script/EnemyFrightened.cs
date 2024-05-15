@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyFrightened : EnemyBehavior
 {
     private Animator animator; // Reference to the Animator component
+    private Vector2 lastDirection;
 
     private void Start()
     {
@@ -13,7 +14,13 @@ public class EnemyFrightened : EnemyBehavior
 
     private void OnDisable()
     {
-        // this.enemy.scatter.Enable();
+        this.enemy.scatter.Enable();
+    }
+
+    private void OnEnable()
+    {
+        // Reset the last direction when the behavior is enabled
+        lastDirection = Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,6 +34,11 @@ public class EnemyFrightened : EnemyBehavior
 
             foreach (Vector2 availableDirection in node.availableDirections)
             {
+                if (availableDirection == -lastDirection)
+                {
+                    continue;
+                }
+
                 Vector3 newPosition = this.transform.position + new Vector3(availableDirection.x, availableDirection.y, 0.0f);
                 float distance = (this.enemy.target.position - newPosition).sqrMagnitude;
 
@@ -39,6 +51,7 @@ public class EnemyFrightened : EnemyBehavior
 
             // Set direction for movement
             this.enemy.movement.SetDirection(direction);
+            lastDirection = direction;
 
             // Trigger animation based on movement direction
             if (direction == Vector2.up)

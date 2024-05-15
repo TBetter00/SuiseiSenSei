@@ -13,11 +13,8 @@ public class EnemyChase : EnemyBehavior
 
     private void OnDisable()
     {
-        //if (!enemy.frightened)
-        {
-            this.enemy.scatter.Enable();
-        }
-
+        Debug.Log("Chase disabled");
+        GetComponent<Enemy>().HandleStateOnDisable(this);
     }
 
 

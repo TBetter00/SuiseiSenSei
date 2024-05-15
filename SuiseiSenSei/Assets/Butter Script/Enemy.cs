@@ -47,12 +47,16 @@ public class Enemy : MonoBehaviour
         {
             isFright = true;
             this.frightened.Enable();
+            this.scatter.Disable();
+            this.chase.Disable();
             Debug.Log("fright");
         }
         else if(!powerCheck.Power)
         {
             isFright = false;
         }
+
+        EnsureActiveBehavior();
     }
 
     public virtual void ResetState()
@@ -98,5 +102,32 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
         Debug.Log("Instanted");
+    }
+
+    
+    public void HandleStateOnDisable(EnemyBehavior disabledBehavior)
+    {
+        if (!isFright)
+        {
+            if (disabledBehavior == chase)
+            {
+                Debug.Log("Chase disabled, enabling scatter");
+                scatter.Enable();
+            }
+            else if (disabledBehavior == scatter)
+            {
+                Debug.Log("Scatter disabled, enabling chase");
+                chase.Enable();
+            }
+        }
+    }
+
+    private void EnsureActiveBehavior()
+    {
+        if (!scatter.enabled && !chase.enabled && !frightened.enabled && !home.enabled)
+        {
+            Debug.Log("No active behavior, enabling scatter as default");
+            scatter.Enable();
+        }
     }
 }
