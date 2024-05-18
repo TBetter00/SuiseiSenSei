@@ -14,7 +14,9 @@ public class EnemyFrightened : EnemyBehavior
 
     private void OnDisable()
     {
-        this.enemy.scatter.Enable();
+
+        enemy.scatter.Enable();
+
     }
 
     private void OnEnable()
