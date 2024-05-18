@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyFrightened : EnemyBehavior
 {
-
     private Animator animator; // Reference to the Animator component
+    private Vector2 lastDirection;
 
     private void Start()
     {
@@ -14,40 +14,44 @@ public class EnemyFrightened : EnemyBehavior
 
     private void OnDisable()
     {
-        //this.enemy.scatter.Enable();
+        this.enemy.scatter.Enable();
     }
 
     private void OnEnable()
     {
-        this.enemy.scatter.Disable();
-        this.enemy.chase.Disable();
-
+        // Reset the last direction when the behavior is enabled
+        lastDirection = Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
 
-        if (node != null && this.enabled && !this.enemy.frightened.enabled)
+        if (node != null && this.enabled)
         {
-            // Debug.Log("Chase mode");
             Vector2 direction = Vector2.zero;
             float maxDistance = float.MinValue;
 
-            foreach (Vector2 availableDirections in node.availableDirections)
+            foreach (Vector2 availableDirection in node.availableDirections)
             {
-                Vector3 newPosition = this.transform.position + new Vector3(availableDirections.x, availableDirections.y, 0.0f);
+                if (availableDirection == -lastDirection)
+                {
+                    continue;
+                }
+
+                Vector3 newPosition = this.transform.position + new Vector3(availableDirection.x, availableDirection.y, 0.0f);
                 float distance = (this.enemy.target.position - newPosition).sqrMagnitude;
 
                 if (distance > maxDistance)
                 {
-                    direction = availableDirections;
+                    direction = availableDirection;
                     maxDistance = distance;
                 }
             }
 
+            // Set direction for movement
             this.enemy.movement.SetDirection(direction);
-
+            lastDirection = direction;
 
             // Trigger animation based on movement direction
             if (direction == Vector2.up)
@@ -67,8 +71,5 @@ public class EnemyFrightened : EnemyBehavior
                 animator.Play("blinky right");
             }
         }
-
-
-        
     }
 }

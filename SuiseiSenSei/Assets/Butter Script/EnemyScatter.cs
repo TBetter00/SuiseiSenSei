@@ -14,10 +14,8 @@ public class EnemyScatter : EnemyBehavior
 
     private void OnDisable()
     {
-        if (!this.enemy.frightened.enabled)
-        {
-            this.enemy.chase.Enable();
-        }
+        Debug.Log("Scatter disabled");
+        GetComponent<Enemy>().HandleStateOnDisable(this);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

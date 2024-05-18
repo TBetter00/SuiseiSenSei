@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public GameManager gameManager;
     public PowerCheck powerCheck;
+    [HideInInspector] public bool isFright = false;
 
 
     public int points = 200;
@@ -42,11 +43,20 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(powerCheck.Power)
+        if(powerCheck.Power && !isFright)
         {
+            isFright = true;
             this.frightened.Enable();
+            this.scatter.Disable();
+            this.chase.Disable();
             Debug.Log("fright");
         }
+        else if(!powerCheck.Power)
+        {
+            isFright = false;
+        }
+
+        EnsureActiveBehavior();
     }
 
     public virtual void ResetState()
@@ -79,14 +89,45 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()==4)
         {
-            Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
-            Debug.Log("instantiated");
             Die();
         }
     }
 
     public void Die(){
+        Instant();
         Destroy(gameObject);
         gameManager.EnemyKilled(points);
+    }
+    public void Instant()
+    {
+        Instantiate(Particleprefab,ParticlePos.position, Quaternion.identity);
+        Debug.Log("Instanted");
+    }
+
+    
+    public void HandleStateOnDisable(EnemyBehavior disabledBehavior)
+    {
+        if (!isFright)
+        {
+            if (disabledBehavior == chase)
+            {
+                Debug.Log("Chase disabled, enabling scatter");
+                scatter.Enable();
+            }
+            else if (disabledBehavior == scatter)
+            {
+                Debug.Log("Scatter disabled, enabling chase");
+                chase.Enable();
+            }
+        }
+    }
+
+    private void EnsureActiveBehavior()
+    {
+        if (!scatter.enabled && !chase.enabled && !frightened.enabled && !home.enabled)
+        {
+            Debug.Log("No active behavior, enabling scatter as default");
+            scatter.Enable();
+        }
     }
 }
