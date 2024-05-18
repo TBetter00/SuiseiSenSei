@@ -9590,6 +9590,11 @@ PrefabInstance:
       propertyPath: duration
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1631297553070575728, guid: 49bd88720458fd94982e7f905bf5b87e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2787982067713904559, guid: 49bd88720458fd94982e7f905bf5b87e,
         type: 3}
       propertyPath: duration
