@@ -103,7 +103,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Particleprefab
       value: 
-      objectReference: {fileID: 8972661298966519156, guid: 8e42434b7d058e24ea145bcf1c3f7b0d,
+      objectReference: {fileID: 271968700861383254, guid: 253c91835f1e9174c8e80a432fa2fdee,
         type: 3}
     - target: {fileID: 4069962892757833231, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
         type: 3}
@@ -172,9 +172,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828468095841316863, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828468095841316863, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828468095841316863, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2397031436732184856, guid: b3d625630f5eda94a9b05877115d6c8f,
+      objectReference: {fileID: 730613961197022279, guid: 5a46b31f2d252d848ac217b9c4f644d3,
         type: 3}
     - target: {fileID: 4828468095841316863, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
         type: 3}
@@ -185,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: -1369247149
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828468095841316863, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5719636679857312663, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
         type: 3}
@@ -215,6 +230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: duration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183778424306781256, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -257,7 +277,8 @@ Animator:
   m_GameObject: {fileID: 4771772059023595070}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 73a45edf1f59fa449aa70c07afa90a0e, type: 2}
+  m_Controller: {fileID: 5682520844054214971, guid: 5a46b31f2d252d848ac217b9c4f644d3,
+    type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
