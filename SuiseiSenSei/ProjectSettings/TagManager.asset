@@ -69,3 +69,6 @@ TagManager:
   - name: Layer 3
     uniqueID: 4189426099
     locked: 0
+  - name: Camera
+    uniqueID: 2626921009
+    locked: 0
