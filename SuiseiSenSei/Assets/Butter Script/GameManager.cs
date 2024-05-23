@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Pacmon pacmon;
     public GameObject enemy;
     public GameObject bigEnemy;
+    public GameObject pinky;
+    public GameObject inky;
     private GameObject currentEnemy;
     private GameObject currentBigEnemy;
     public GameObject deadParticle;
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogWarning("Pacmon GameObject not found.");
             }
+            SpawnMon0();
     }
 
     private void Update()
@@ -165,6 +168,14 @@ public class GameManager : MonoBehaviour
     // }
 
     // in stage 1 spawn first monster and when that monster die it will spawn 1 monster
+
+    public void SpawnMon0()
+    {
+        Instantiate(pinky, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(inky, spawnPoint.position, spawnPoint.rotation);
+
+    }
+
     public void CheckMon1()
     {
         if (pacmon.stage1 && !hasSpawned1)
@@ -174,6 +185,7 @@ public class GameManager : MonoBehaviour
         }
         if (hasSpawned1 && currentEnemy == null)
         {
+            Debug.Log("enemy1 dead");
             SpawnMon1();
         }
 

@@ -18,6 +18,14 @@ public class FireballHitbox : MonoBehaviour{
                 enemy = collision.gameObject.GetComponent<Enemy>();
                 enemy.Die();
                 }
+            if(collision.gameObject.name == "Inky" || collision.gameObject.name == "Inky(Clone)"){
+                enemy = collision.gameObject.GetComponent<Enemy>();
+                enemy.Die();
+                }
+            if(collision.gameObject.name == "Pinky" || collision.gameObject.name == "Pinky(Clone)"){
+                enemy = collision.gameObject.GetComponent<Enemy>();
+                enemy.Die();
+                }
             if(collision.gameObject.name == "Enemy_Big" || collision.gameObject.name == "Enemy_Big(Clone)"){
                 bigEnemy = collision.gameObject.GetComponent<BigEnemy>();
                 bigEnemy.TakeDamage(dmg);

@@ -25,6 +25,12 @@ public class SpreadHitbox : MonoBehaviour
         if((collision.gameObject.name =="Blinky" || collision.gameObject.name == "Blinky(Clone)")&&gameObject.activeSelf){
             enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.Die();}
+        else if((collision.gameObject.name =="Pinky" || collision.gameObject.name == "Pinky(Clone)")&&gameObject.activeSelf){
+            enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.Die();}
+        else if((collision.gameObject.name =="Inky" || collision.gameObject.name == "Inky(Clone)")&&gameObject.activeSelf){
+            enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.Die();}
 
         else if((collision.gameObject.name == "Enemy_Big"|| collision.gameObject.name == "Enemy_Big(Clone)")&&gameObject.activeSelf){
             bigEnemy = collision.gameObject.GetComponent<BigEnemy>();
