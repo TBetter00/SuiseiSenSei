@@ -51,10 +51,17 @@ public class Enemy : MonoBehaviour
             this.chase.Disable();
             Debug.Log("fright");
         }
-        else if(!powerCheck.Power)
+        if (pacmon.stageMega)
+        {
+            isFright = true;
+            this.frightened.Enable();
+            Debug.Log("megafright");
+        }
+        else if(!powerCheck.Power || !pacmon.stageMega)
         {
             isFright = false;
         }
+
 
         EnsureActiveBehavior();
     }
