@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 3604325871657216385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.433334, y: -1.9645833, z: -0.0441718}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,7 +314,6 @@ GameObject:
   - component: {fileID: 7782871519145784627}
   - component: {fileID: 2902833417123896439}
   - component: {fileID: 1383195245640908295}
-  - component: {fileID: 2144702891215621010}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -421,21 +420,6 @@ MonoBehaviour:
   low: {r: 1, g: 0, b: 0, a: 1}
   high: {r: 0, g: 0.6377357, b: 0.27599776, a: 1}
   offSet: {x: 0, y: 0, z: 0}
---- !u!114 &2144702891215621010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4562393698747631974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e10cc8057ab46964db6009fd48f5ba14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 0
-  maxHP: 5
-  Healthbar: {fileID: 0}
 --- !u!1 &8171951630106399335
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +670,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3766949503344466891}
+    - targetCorrespondingSourceObject: {fileID: 3163885172587481606, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5376011640210722501}
   m_SourcePrefab: {fileID: 100100000, guid: 4208b7e3afb2c5f4783d98de7bfca0f1, type: 3}
 --- !u!114 &2787982067713904559 stripped
 MonoBehaviour:
@@ -726,6 +714,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5376011640210722501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771772059023595070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10cc8057ab46964db6009fd48f5ba14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 5
+  maxHP: 5
+  Healthbar: {fileID: 1383195245640908295}
 --- !u!4 &6209027367144225428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610059654607726252, guid: 4208b7e3afb2c5f4783d98de7bfca0f1,

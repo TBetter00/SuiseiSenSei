@@ -3,8 +3,8 @@ using UnityEngine;
 public class BigEnemy : MonoBehaviour
 {
 
-    public float currentHP;
-    public float maxHP = 5;
+    public float currentHP = 5f;
+    public float maxHP = 5f;
     public HealthbarBehaviour Healthbar;
 
 
