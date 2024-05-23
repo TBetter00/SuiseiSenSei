@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject inky;
     private GameObject currentEnemy;
     private GameObject currentBigEnemy;
+    private GameObject currentPinky;
+    private GameObject currentInky;
     public GameObject deadParticle;
     private bool hasSpawned1 = false;
     private bool hasSpawned2 = false;
@@ -60,10 +62,10 @@ public class GameManager : MonoBehaviour
             NewGame();
         }
         setNewRound();
+        CheckMon0();
         CheckMon1();
         CheckMon2();
-        StartCoroutine(SpawnMonRepeatly());
-        StartCoroutine(SpawnBigMonRepeatly());
+
 
 
         
@@ -171,8 +173,20 @@ public class GameManager : MonoBehaviour
 
     public void SpawnMon0()
     {
-        Instantiate(pinky, spawnPoint.position, spawnPoint.rotation);
-        Instantiate(inky, spawnPoint.position, spawnPoint.rotation);
+        currentPinky = Instantiate(pinky, spawnPoint.position, spawnPoint.rotation);
+        currentInky = Instantiate(inky, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    public void CheckMon0()
+    {
+        if (currentPinky == null)
+        { 
+            currentPinky = Instantiate(pinky, spawnPoint.position, spawnPoint.rotation);
+        }
+        if (currentInky == null)
+        { 
+            currentInky = Instantiate(inky, spawnPoint.position, spawnPoint.rotation);
+        }
 
     }
 
@@ -185,7 +199,7 @@ public class GameManager : MonoBehaviour
         }
         if (hasSpawned1 && currentEnemy == null)
         {
-            Debug.Log("enemy1 dead");
+            
             SpawnMon1();
         }
 
@@ -193,10 +207,9 @@ public class GameManager : MonoBehaviour
 
     public void SpawnMon1()
     {
-        if (pacmon.stage1)
-        {
-            currentEnemy = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        }
+
+        currentEnemy = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+
     }
 
 
@@ -216,43 +229,13 @@ public class GameManager : MonoBehaviour
 
     public void SpawnMon2()
     {
-        if (pacmon.stage2)
-        {
-            currentBigEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-        }
+
+        currentBigEnemy = Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
+
     }
 
-    IEnumerator SpawnMonRepeatly()
-    {
-        
-        if ((pacmon.stage2) && !hasSpawnedRepeat)
-        {
-            hasSpawnedRepeat = true;
-            Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(15);
-            hasSpawnedRepeat = false;
 
-        }
-        
-    }
 
-    IEnumerator SpawnBigMonRepeatly()
-    {
-        if ((pacmon.stage3) && !hasSpawned3)
-        {
-            hasSpawned3 = true;
-            Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(10);
-            hasSpawned3 = false;
-        }
-        if (pacmon.stageMega && !hasSpawnedMega)
-        {
-            hasSpawnedMega = true;
-            Instantiate(bigEnemy, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(5);
-            hasSpawnedMega = false;
-        }
-    }
     IEnumerator CoolDown()
     {
         yield return new WaitForSeconds(Safetime);
