@@ -5,18 +5,23 @@ public class PowerCheck:MonoBehaviour{
     public float timetillremove;
     [SerializeField]private float timecount;
     public GameObject skillUI;
+    public GameObject PowerUp;
     private Enemy enemy;
+    public Animator animator;
 
     public void Start(){
         Power = false;
         timecount = timetillremove;
+        animator = PowerUp.GetComponent<Animator>();
+        PowerUp.SetActive(true);
         
     }
     public void Update()
     {
         if (Power)
         {
-            skillUI.SetActive(true);
+            // skillUI.SetActive(true);
+            animator.SetBool("isfull",true);
             timecount -= Time.deltaTime;
             if(timecount <= 0)
             {
@@ -27,13 +32,15 @@ public class PowerCheck:MonoBehaviour{
         }else if (!Power)
         {
             timecount = timetillremove;
-            skillUI.SetActive(false);
+            animator.SetBool("isfull",false);
+            // skillUI.SetActive(false);
         }
         
     }
 
     public void AddPower(){
         Power= true;
+        animator.SetTrigger("powerOn");
         timecount = timetillremove;
     }
 
