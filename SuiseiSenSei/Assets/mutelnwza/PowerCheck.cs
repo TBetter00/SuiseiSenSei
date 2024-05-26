@@ -4,7 +4,7 @@ public class PowerCheck:MonoBehaviour{
     public bool Power;
     public float timetillremove;
     [SerializeField]private float timecount;
-    public GameObject skillUI;
+    public GameObject skillUI;//actually this does'nt do shit
     public GameObject PowerUp;
     private Enemy enemy;
     public Animator animator;
