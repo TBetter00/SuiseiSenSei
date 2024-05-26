@@ -13317,6 +13317,7 @@ GameObject:
   - component: {fileID: 999142541}
   - component: {fileID: 999142543}
   - component: {fileID: 999142542}
+  - component: {fileID: 999142544}
   m_Layer: 5
   m_Name: skillcd
   m_TagString: Untagged
@@ -13338,10 +13339,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8151576982745354231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -220, y: 105}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &999142542
 MonoBehaviour:
@@ -13363,7 +13364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 923860886689201637, guid: 674bc78d5ee6a1c4f9deb228807be0a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13381,6 +13382,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999142540}
   m_CullTransparentMesh: 1
+--- !u!95 &999142544
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999142540}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: -92391878402366341, guid: 674bc78d5ee6a1c4f9deb228807be0a2,
+    type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1007521145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29574,6 +29597,11 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1582214360}
+    - target: {fileID: 7713615833936209505, guid: f19465fe690cd39479ff7fac260ffb40,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a6b987c48976294babff95dba237c59, type: 2}
     - target: {fileID: 8896585949985338690, guid: f19465fe690cd39479ff7fac260ffb40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33261,6 +33289,8 @@ MonoBehaviour:
   timetillremove: 5
   timecount: 0
   skillUI: {fileID: 999142540}
+  PowerUp: {fileID: 999142540}
+  animator: {fileID: 999142544}
 --- !u!222 &5163275678256269336
 CanvasRenderer:
   m_ObjectHideFlags: 0
