@@ -13031,7 +13031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -370, y: 105}
+  m_AnchoredPosition: {x: -354.3, y: 476}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 1, y: 0}
 --- !u!95 &950280930
@@ -20130,7 +20130,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 353284153}
   pacmon: {fileID: 800160751296053544}
   enemy: {fileID: 4771772059023595070, guid: 49bd88720458fd94982e7f905bf5b87e, type: 3}
-  bigEnemy: {fileID: 4771772059023595070, guid: fe21ee55aea4dfa489ebf22dd847c070,
+  bigEnemy: {fileID: 3163885172587481606, guid: 43d8a52daf7042e44bb2b960c39cbf32,
     type: 3}
   pinky: {fileID: 4771772059023595070, guid: fe21ee55aea4dfa489ebf22dd847c070, type: 3}
   inky: {fileID: 4771772059023595070, guid: dacbf07c82d2cda429b40450ac1ca83b, type: 3}
@@ -33287,9 +33287,9 @@ MonoBehaviour:
   Power: 0
   timetillremove: 5
   timecount: 0
-  skillUI: {fileID: 0}
-  PowerUp: {fileID: 0}
-  animator: {fileID: 0}
+  skillUI: {fileID: 950280928}
+  PowerUp: {fileID: 950280928}
+  animator: {fileID: 950280930}
 --- !u!222 &5163275678256269336
 CanvasRenderer:
   m_ObjectHideFlags: 0
