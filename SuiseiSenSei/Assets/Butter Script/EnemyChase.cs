@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyChase : EnemyBehavior
 {
-<<<<<<< Updated upstream
     private Animator animator; // Reference to the Animator component
 
     private void Start()
@@ -20,14 +19,6 @@ public class EnemyChase : EnemyBehavior
 
 
 
-=======
-    /*
-    private void OnDisable()
-    {
-        this.enemy.scatter.Enable();
-    }
-
->>>>>>> Stashed changes
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
@@ -49,7 +40,6 @@ public class EnemyChase : EnemyBehavior
                 }
             }
 
-<<<<<<< Updated upstream
             // Set direction for movement
             this.enemy.movement.SetDirection(direction);
 
@@ -72,10 +62,4 @@ public class EnemyChase : EnemyBehavior
             }
         }
     }
-=======
-            this.enemy.movement.SetDirection(direction);
-        }
-    }
-    */
->>>>>>> Stashed changes
 }

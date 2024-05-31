@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyFrightened : EnemyBehavior
 {
-<<<<<<< Updated upstream
     private Animator animator; // Reference to the Animator component
     private Vector2 lastDirection;
 
@@ -76,17 +75,3 @@ public class EnemyFrightened : EnemyBehavior
         }
     }
 }
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
->>>>>>> Stashed changes

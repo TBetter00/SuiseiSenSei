@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyScatter : EnemyBehavior
 {
-<<<<<<< Updated upstream
     public Animator animator;
 
     private void Start()
@@ -19,8 +18,6 @@ public class EnemyScatter : EnemyBehavior
         GetComponent<Enemy>().HandleStateOnDisable(this);
     }
 
-=======
->>>>>>> Stashed changes
     private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
@@ -33,17 +30,12 @@ public class EnemyScatter : EnemyBehavior
             {
                 index++;
 
-<<<<<<< Updated upstream
                 if (index >= node.availableDirections.Count)
                 {
-=======
-                if (index >= node.availableDirections.Count){
->>>>>>> Stashed changes
                     index = 0;
                 }
             }
 
-<<<<<<< Updated upstream
             // Set direction
             Vector2 direction = node.availableDirections[index];
             this.enemy.movement.SetDirection(direction);
@@ -65,9 +57,6 @@ public class EnemyScatter : EnemyBehavior
             {
                 animator.Play("blinky right");
             }
-=======
-            this.enemy.movement.SetDirection(node.availableDirections[index]);
->>>>>>> Stashed changes
         }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-<<<<<<< Updated upstream
 
     public Movement movement { get; private set; }
     public EnemyHome home { get; private set; }
@@ -20,22 +19,11 @@ public class Enemy : MonoBehaviour
     public PowerCheck powerCheck;
     [HideInInspector] public bool isFright = false;
 
-=======
-    public Movement movement {get; private set;}
-    public EnemyHome home {get; private set;}
-    public EnemyScatter scatter {get; private set;}
-    public EnemyChase chase {get; private set;}
-    public EnemyFrightened frightened {get; private set;}
-    public EnemyBehavior initialBehavior;
-
-    public Transform target;
->>>>>>> Stashed changes
 
     public int points = 200;
 
     private void Awake()
     {
-<<<<<<< Updated upstream
         this.movement = GetComponent<Movement>();
         this.home = GetComponent<EnemyHome>();
         this.scatter = GetComponent<EnemyScatter>();
@@ -45,19 +33,11 @@ public class Enemy : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         powerCheck = FindObjectOfType<PowerCheck>();
 
-=======
-        this.movement = GetComponent<Movement>(); 
-        this.home = GetComponent<EnemyHome>(); 
-        this.scatter = GetComponent<EnemyScatter>(); 
-        this.chase = GetComponent<EnemyChase>(); 
-        this.frightened = GetComponent<EnemyFrightened>(); 
->>>>>>> Stashed changes
     }
 
     private void Start()
     {
         ResetState();
-<<<<<<< Updated upstream
         target = GameObject.Find("Pukkermon").transform;
     }
 
@@ -87,11 +67,6 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void ResetState()
-=======
-    }
-
-    public void ResetState()
->>>>>>> Stashed changes
     {
         this.gameObject.SetActive(true);
         this.movement.ResetState();
@@ -99,7 +74,6 @@ public class Enemy : MonoBehaviour
         this.frightened.Disable();
         this.chase.Disable();
         this.scatter.Enable();
-<<<<<<< Updated upstream
 
         if (this.home != this.initialBehavior)
         {
@@ -108,21 +82,12 @@ public class Enemy : MonoBehaviour
 
         if (this.initialBehavior != null)
         {
-=======
-        
-        if (this.home != this.initialBehavior){
-            this.home.Disable();
-        }
-
-        if (this.initialBehavior != null){
->>>>>>> Stashed changes
             this.initialBehavior.Enable();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-<<<<<<< Updated upstream
         if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon") && pacmon.GetCurrentStage()!=4)
         {
             if(gameManager.Vulnerable){
@@ -170,11 +135,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("No active behavior, enabling scatter as default");
             scatter.Enable();
-=======
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacmon"))
-        {
-            FindObjectOfType<GameManager>().PacmonKilled();
->>>>>>> Stashed changes
         }
     }
 }

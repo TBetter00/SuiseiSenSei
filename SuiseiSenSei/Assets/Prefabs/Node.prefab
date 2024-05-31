@@ -10,11 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192134131283791267}
   - component: {fileID: 5393440733477629844}
-<<<<<<< Updated upstream:SuiseiSenSei/Assets/Prefabs/Node.prefab
   - component: {fileID: 3438800262594789028}
-=======
-  - component: {fileID: 8560257191972890822}
->>>>>>> Stashed changes:SuiseiSenSei/Assets/Cainos/Pixel Art Top Down - Basic/Texture/Node.prefab
   m_Layer: 10
   m_Name: Node
   m_TagString: Untagged
@@ -82,11 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< Updated upstream:SuiseiSenSei/Assets/Prefabs/Node.prefab
 --- !u!114 &3438800262594789028
-=======
---- !u!114 &8560257191972890822
->>>>>>> Stashed changes:SuiseiSenSei/Assets/Cainos/Pixel Art Top Down - Basic/Texture/Node.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,15 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7271046731580014292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream:SuiseiSenSei/Assets/Prefabs/Node.prefab
   m_Script: {fileID: 11500000, guid: beaae2c16671f564ab88e804ffda10ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
-=======
-  m_Script: {fileID: 11500000, guid: 3be401b573afc0345b648ecdfbf85687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> Stashed changes:SuiseiSenSei/Assets/Cainos/Pixel Art Top Down - Basic/Texture/Node.prefab
