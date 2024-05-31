@@ -110,9 +110,18 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
+<<<<<<< Updated upstream
         this.pacmon.ResetState();
         this.pacmon.GetComponent<SpriteRenderer>().enabled = true;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = true;
+=======
+        for (int i = 0; i < this.enemy.Length; i++)
+        {
+            this.enemy[i].ResetState();
+        }
+
+        this.pacmon.ResetState();
+>>>>>>> Stashed changes
     }
 
     private void SetScore(int score)
@@ -148,6 +157,7 @@ public class GameManager : MonoBehaviour
         this.pacmon.GetComponent<SpriteRenderer>().enabled = false;
         this.pacmon.GetComponent<CircleCollider2D>().enabled = false;
         SetLives(this.lives - 1);
+        Debug.Log("pacmon killed");
 
         if (this.lives > 0){
             Invoke(nameof(ResetState), 3.0f);

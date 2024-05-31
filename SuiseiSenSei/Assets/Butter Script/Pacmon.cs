@@ -128,6 +128,7 @@ public class Pacmon : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
     public int GetCurrentStage()
     {
         if (stageEgg)
@@ -208,10 +209,13 @@ public class Pacmon : MonoBehaviour
         walkingRight = false;
     }
 
+=======
+>>>>>>> Stashed changes
     public void ResetState()
     {
         this.movement.ResetState();
         this.gameObject.SetActive(true);
+<<<<<<< Updated upstream
     }
 
     void setAllstageFalse()
@@ -323,5 +327,8 @@ public class Pacmon : MonoBehaviour
         }
         AlreadyBlink5th = false;
         AlreadyBlink4th = false;
+=======
+        
+>>>>>>> Stashed changes
     }
 }

@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 [RequireComponent(typeof(Enemy))]
 public abstract class EnemyBehavior : MonoBehaviour
 {
@@ -32,7 +35,13 @@ public abstract class EnemyBehavior : MonoBehaviour
     public virtual void Disable()
     {
         this.enabled = false;
+<<<<<<< Updated upstream
 
         CancelInvoke();
     }
 }
+=======
+        CancelInvoke();
+    }
+}
+>>>>>>> Stashed changes
