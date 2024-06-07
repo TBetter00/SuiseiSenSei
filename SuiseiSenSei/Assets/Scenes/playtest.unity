@@ -20159,7 +20159,7 @@ MonoBehaviour:
   spawnAmountAfterDeath: 2
   pellet: []
   initialEnemyCount: 1
-  Safetime: 0
+  Safetime: 5
   Vulnerable: 1
 --- !u!4 &1582214361
 Transform:
@@ -31554,8 +31554,8 @@ MonoBehaviour:
   animator: {fileID: 3528703118324269057}
   GameManager: {fileID: 1582214360}
   EggtoFirst: 200
-  FirsttoSecond: 1000
-  SecondtoThird: 2000
+  FirsttoSecond: 3000
+  SecondtoThird: 8000
   ThirdtoFourth: 100000
   stageEgg: 1
   stage1: 0
